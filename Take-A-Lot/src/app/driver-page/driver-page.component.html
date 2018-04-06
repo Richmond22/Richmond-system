@@ -1,0 +1,57 @@
+<div *ngIf="login" class="alert alert-success" role="alert">
+    You're now logged in. Sweet.
+  </div>
+<img src="https://mybroadband.co.za/news/wp-content/uploads/2014/07/Takealot-delivery.png" width="1100" height="350">
+<div *ngFor = "let order of OrderService.orderList">
+
+    <div class="card form-control">
+        <div class="card-header">
+          Order ID : {{order.OrderID}} <br>
+          Customer ID : {{order.customerID}}
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+
+
+           
+     <!-- Button trigger modal -->
+<button type="button"(click) = "Address(order.customerID)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Delivery Address
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" media="print" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Delivery Address</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div *ngIf="add" class="modal-body">
+          <p class="col" align="left">Conatact-person...........: {{add.contactPerson}}</p>
+          <p class="col" align="left">Phone................................: {{add.phone}}</p>
+          <p class="col" align="left">Addres-line-1.................: {{add.address1}}</p>
+          <p class="col" align="left">Addres-line-2.................: {{add.address2}}</p>
+          <p class="col" align="left">Suburb...............................: {{add.suburb}}</p>
+          <p class="col" align="left">City......................................: {{add.city}}</p>
+          <p class="col" align="left">Code.................................: {{add.zip}}</p>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" (click)="printA()" class="btn btn-primary">
+              <i class="fa fa-print" aria-hidden="true"></i>Print Address</button>
+        </div>
+      </div>
+    </div>
+  </div>       
+          
+
+          </blockquote>
+        </div>
+      </div>
+
+
+    </div>

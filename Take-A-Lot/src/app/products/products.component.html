@@ -1,0 +1,156 @@
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" routerLink="/admin-page">
+      <img src="https://customercentria.files.wordpress.com/2015/01/admin.png" width="200" height="60" class="d-inline-block align-top" >
+      
+    </a>
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+      <button type="button" class="btn btn-secondary" routerLink="/products">Manage products</button>
+      <button type="button" routerLink="/orders" class="btn btn-secondary">View orders</button>
+      
+    
+      <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Manage Employees
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+          <a class="dropdown-item" routerLink="/driver">Drivers</a>
+          <a class="dropdown-item" routerLink="/supplier">Suppliers</a>
+          <a class="dropdown-item" routerLink="/admin">Admins</a>
+        </div>
+      </div>
+    </div>
+  
+  </nav>
+<form #productform="ngForm" (ngSubmit)="OnSubmit(productform)">
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label >Product Name</label>
+      <input type="text" class="form-control" name="name" #name="ngModel"[(ngModel)] ="ProductService.product.name"  required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label >model</label>
+      <input type="text" class="form-control" name="model" #model="ngModel"[(ngModel)] ="ProductService.product.model"  required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationDefaultUsername">category</label>
+      <div class="input-group">
+        <input type="hidden" class="form-control"  name="category" #category="ngModel"[(ngModel)] ="ProductService.product.category"  required>
+        <fieldset>
+          <p>
+             <select  (change)="cat($event)" >
+                <option ></option>
+               <option value = "Computersandtablets" >Computers and tablets</option>
+               <option value = "cellphoneandwearables">cellphone and wearables</option>
+               <option value = "TV,Audioandvideo">TV,Audio and video</option>
+               <option value = "Gaming">Gaming</option>
+               <option value = "Cameras">Cameras</option>
+               <option value = "shoes">shoes</option>
+               
+             
+
+             </select>
+          </p>
+       </fieldset>
+     
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationDefaultUsername">Price</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">R</span>
+        </div>
+        <input type="text" class="form-control" name="price" #price="ngModel"[(ngModel)] ="ProductService.product.price"  required>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label >Quantity</label>
+      <input type="text" class="form-control" name="quantity" #quantity="ngModel"[(ngModel)] ="ProductService.product.quantity"  required>
+    </div>
+  </div>
+  <div class="col-md-3 mb-3">
+    
+    <input type="hidden" class="form-control" name="imgName" #imgName="ngModel"[(ngModel)] ="ProductService.product.imgName" >
+  </div>
+  
+  <div class="col">
+    <input #file type="file" (change)="updateFile(file)">
+  </div>
+  
+ 
+  
+
+  <div class="col">
+    <button  [disabled]="!productform.valid" class="btn btn-btn-outline-primary btn-block" type="submit">Add Product</button>
+  </div>
+  
+</form>
+
+<h2>Product List</h2>
+
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">picture</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Product Model</th>
+      <th scope="col">Unit Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Select Quantity</th>
+      <th scope="col">Update price</th>
+      <th scope="col">Remove Product</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of ProductService.productlist">
+      <th scope="row">{{product.productID}}</th>
+      <td>
+        <img  src="assets/img/{{product.imgName}}" width="50" height="50">
+      </td>
+     
+      <td>{{product.name}}</td>
+      <td>{{product.model}}</td>
+      <td>R-{{product.price}}
+
+      </td>
+      <td>{{product.quantity}}</td>
+      <td>
+        <fieldset>
+          <p>
+             <select  (change)="Selected($event,product)" >
+               <option value = "1" >1</option>
+               <option value = "2">2</option>
+               <option value = "3">3</option>
+               <option value = "4">4</option>
+               <option value = "5">5</option>
+               <option value = "6">6</option>
+               <option value = "7">7</option>
+               <option value = "8">8</option>
+
+             </select>
+          </p>
+       </fieldset>
+
+      </td>
+      <td>
+        <div class="input-group mb-1">
+          <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary" (click)="update(price,product)" type="button">Change</button>
+          </div>
+          <input type="text" id="price"  class="col-sm-5" placeholder="R{{product.price}}" >
+        </div>
+
+      </td>
+      <td>
+        <a  class="btn text-danger" (click)="onDelete(product.productID)">
+          <i class="fa fa-trash-o"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

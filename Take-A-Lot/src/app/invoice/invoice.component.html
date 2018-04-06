@@ -1,0 +1,21 @@
+<h3>Invoices</h3>
+<table class="table">
+    <thead class="thead-light">
+      <tr>
+        
+        <th scope="col">Order ID</th>
+        <th scope="col">Date</th>
+        <th scope="col">Total Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let order of OrderServices.orderList">
+      
+        
+        <td>{{order.OrderID}}</td>
+        <td>{{order.date}}</td>
+        <td>R.{{order.totalCost}}</td>
+      </tr>
+    
+    </tbody>
+  </table>

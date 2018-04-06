@@ -1,0 +1,49 @@
+
+<h2 >REGISTER</h2>
+
+<form class="emp-form" #signUpForm="ngForm" (ngSubmit)="OnSubmit(signUpForm)"> 
+  
+    
+
+      <div class="form-group row">
+          <label class="col-sm-2 col-form-label">First Name*</label>
+          <div class="col-sm-6">
+              <input class="form-control" name="firstName" #firstName="ngModel"[(ngModel)] ="signUpService.customer.firstName" placeholder="First Name" required >
+          </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Last Name*</label>
+            <div class="col-sm-6">
+                <input class="form-control" name="lastName" #lastName="ngModel"[(ngModel)] ="signUpService.customer.lastName" placeholder="Last Name" required >
+            </div>
+          </div>
+
+        
+          <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Email*</label>
+              <div class="col-sm-6">
+                  <input class="form-control" name="email" #email="ngModel"[(ngModel)] ="signUpService.customer.email"placeholder="Email" required >
+              </div>
+          </div>
+         
+          <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Password*</label>
+              <div class="col-sm-6">
+                  <input class="form-control" type="password" name="password" #password="ngModel"[(ngModel)] ="signUpService.customer.password" placeholder="Password" required>
+              </div>
+          </div>
+ 
+          <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Phone*</label>
+              <div class="col-sm-6">
+                  <input class="form-control" name="phone" #phone="ngModel"[(ngModel)] ="signUpService.customer.phone" placeholder="Phone" required>
+              </div>
+          </div>
+    
+  <div class="form-group col-md-3">
+     <button [disabled]="!signUpForm.valid" type="submit" class="btn btn-lg btn-block btn-info">Register now</button>
+  </div>
+
+</form>

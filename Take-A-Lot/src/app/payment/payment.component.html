@@ -1,0 +1,60 @@
+
+<img src="http://cryptocapers.com/wp-content/uploads/2018/02/Buying-Cryptocoin-With-Credit-Cards.jpg" width="1100px" height="300px">
+<div class="card">
+    <h5 class="card-header">Enter card details</h5>
+    <div class="card-body">
+        <form #credit="ngForm" (ngSubmit)="OnSubmit(credit)">
+            <input type="hidden" class="form-control form-control-sm col-sm-3" name="paymentID" #paymentID="ngModel"[(ngModel)] ="PayService.credit.paymentID" >
+            <input type="hidden" class="form-control form-control-sm col-sm-3" name="ID" #ID="ngModel"[(ngModel)] ="PayService.credit.ID" >
+            <div class="form-group row">
+              <label class="form-control-sm col-sm-2" >Card Description :</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control form-control-sm col-sm-3" name="CardDescription" #CardDescription="ngModel"[(ngModel)] ="PayService.credit.CardDescription" >
+              </div>
+            </div>
+            <div class="form-group row">
+                <label class="form-control-sm col-sm-2"  >Name on Card :</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-sm col-sm-3" name="NameonCard" #NameonCard="ngModel"[(ngModel)] ="PayService.credit.NameonCard" >
+                </div>
+              </div>
+              <div class="form-group row">
+                  <label class="form-control-sm col-sm-2"  >Card Number :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control form-control-sm col-sm-3" name="CardNumber" #CardNumber="ngModel"[(ngModel)] ="PayService.credit.CardNumber">
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label class="form-control-sm col-sm-2"  >Expiration Date :</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control form-control-sm col-sm-3" name="ExpirationDate" #ExpirationDate="ngModel"[(ngModel)] ="PayService.credit.ExpirationDate" >
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label class="form-control-sm col-sm-2"  >Straight / Budget :</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control form-control-sm col-sm-3" name="Type" #Type="ngModel"[(ngModel)] ="PayService.credit.Type" >
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-control-sm col-sm-2"  >Cvv :</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control form-control-sm col-sm-3" name="Cvv" #Cvv="ngModel"[(ngModel)] ="PayService.credit.Cvv" >
+                        </div>
+                      </div>
+                     
+                      <div class="col-sm-10">
+                          <div>
+                              <button type="submit" class="btn btn-outline-success">Secure Payment</button>
+                          </div>
+                          <div style="float: right" >
+                            <button [disabled] = "!pr" (click)= "CreateOrder()" routerLink="/confirmation"  class="btn btn-success">Procced</button>
+                              
+                          </div>
+                      </div>
+            
+          </form>
+          
+          
+    </div>
+  </div>

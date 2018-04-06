@@ -1,0 +1,96 @@
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" routerLink="/admin-page">
+      <img src="https://customercentria.files.wordpress.com/2015/01/admin.png" width="200" height="60" class="d-inline-block align-top" >
+      
+    </a>
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+    
+      <button type="button" class="btn btn-secondary" routerLink="/products">Manage products</button>
+      <button type="button" routerLink="/orders" class="btn btn-secondary">View orders</button>
+      
+    
+      <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Manage Employees
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+          <a class="dropdown-item" routerLink="/driver">Drivers</a>
+          <a class="dropdown-item" routerLink="/supplier">Suppliers</a>
+          <a class="dropdown-item" routerLink="/admin">Admins</a>
+        </div>
+      </div>
+    </div>
+  
+  </nav>
+  <h2>LIST OF ORDERS</h2>
+  
+
+<div *ngFor = "let order of OrderService.orderList">
+
+    <div class="card form-control">
+        <div class="card-header">
+          Order ID : {{order.OrderID}} <br>
+          Customer ID : {{order.customerID}}
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+
+             <!-- Button trigger modal -->
+<button type="button" (click)="items(order)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    View Order Items
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Order Items</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            
+            
+            <table class="table">
+                <thead>
+                  <tr>
+                    
+                    <th scope="col">Name</th>
+                    <th scope="col">model</th>
+                    <th scope="col">Quantity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of  OrderService.prolist">
+                        
+                            <th scope="row">{{item.name}}</th>
+                            <td>{{item.model}}</td>
+                            <td>{{item.quantity}}</td>
+                           
+                         
+                    </tr>
+                 
+                </tbody>
+              </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+            
+            <footer class="blockquote-footer">TOTAL COST R {{order.totalCost}}</footer>
+            <a  class="btn text-danger" (click)="deleteOrder(order.OrderID)">
+              Remove Order  <i class="fa fa-trash-o"></i>
+              </a>
+
+          </blockquote>
+        </div>
+      </div>
+
+
+    </div>

@@ -1,0 +1,46 @@
+
+<img src="https://www.lizardscustomlabels.co.za/wp-content/uploads/2017/05/payment-methord-payfast.png" width="1100px" height="300px">
+<div class="card">
+    <h5 class="card-header">Enter card details</h5>
+    <div class="card-body">
+        <form #eft="ngForm" (ngSubmit)="OnSubmit(eft)">
+            <input type="hidden" class="form-control form-control-sm col-sm-3" name="paymentID" #paymentID="ngModel"[(ngModel)] ="PayService.eft.paymentID" >
+            <input type="hidden" class="form-control form-control-sm col-sm-3" name="ID" #ID="ngModel"[(ngModel)] ="PayService.eft.ID" >
+            <div class="form-group row">
+              <label class="form-control-sm col-sm-2" >Acc Holder :</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control form-control-sm col-sm-3" name="AccHolder" #AccHolder="ngModel"[(ngModel)] ="PayService.eft.AccHolder"  >
+              </div>
+            </div>
+            <div class="form-group row">
+                <label class="form-control-sm col-sm-2"  >Bank :</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control form-control-sm col-sm-3" name="Bank" #Bank="ngModel"[(ngModel)] ="PayService.eft.Bank"  >
+                </div>
+              </div>
+              <div class="form-group row">
+                  <label class="form-control-sm col-sm-2"  >Acc No :</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control form-control-sm col-sm-3" name="AccNo" #AccNo="ngModel"[(ngModel)] ="PayService.eft.AccNo" >
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="form-control-sm col-sm-2"  >Branch Code :</label>
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control form-control-sm col-sm-3" name="Branch" #Branch="ngModel"[(ngModel)] ="PayService.eft.Branch"  >
+                    </div>
+                </div>
+
+                <div class="col-sm-10">
+                    <div>
+                        <button type="submit" class="btn btn-outline-success">Secure Payment</button>
+                    </div>
+                    <div style="float: right" >
+                      <button [disabled] = "!pr" (click)= "CreateOrder()" routerLink="/confirmation"  class="btn btn-success">Procced</button>
+                        
+                    </div>
+                </div>
+                  
+          </form>
+    </div>
+  </div>

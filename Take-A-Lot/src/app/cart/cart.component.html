@@ -1,0 +1,76 @@
+<div *ngIf="updated" class="alert alert-success" role="alert">
+  Cart updated
+  </div>
+<h2>Shopping Cart</h2>
+<div class="form-row">
+    
+      
+      
+      <table class="table table-striped col">
+        <thead>
+          <tr class="table-active">
+           
+            <th scope="col">Item Description</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col">Unit Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Select Quantity</th>
+            <th scope="col">Remove Product</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cart of  CartService.cartlist">
+            
+            <td>
+              <img  src="assets/img/{{cart.imgName}}" width="50" height="50">
+            </td>
+             
+            
+            <td style="color:blue">{{cart.name}}</td>
+            <td style="color:blue">{{cart.model}}</td>
+            <td onload="calcTot(cart.price)">R {{cart.price}}</td>
+            <td>{{cart.quantity}}</td>
+            <td>
+              <fieldset>
+                <p>
+                   <select  (change)="Selected($event,cart)" >
+                     <option value = "1" >1</option>
+                     <option value = "2">2</option>
+                     <option value = "3">3</option>
+                     <option value = "4">4</option>
+                     <option value = "5">5</option>
+                     <option value = "6">6</option>
+                     <option value = "7">7</option>
+                     <option value = "8">8</option>
+      
+                   </select>
+                </p>
+             </fieldset>
+      
+            </td>
+            <td>
+              <a  class="btn text-danger" (click)="onDelete(cart.cartID)">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="card text-right float-right" style="width: 18rem;">
+          <div class="card-body">
+              <div class="card-header">Cart Summary</div>
+            
+            <p class="card-text">  Total items : {{calcitems()}} <br>Total cost R {{caltot() }}  </p>
+            <a (click) ="navig()"  class="btn btn-secondary">Proceed to checkout</a>
+          </div>
+        </div>
+
+</div>
+
+
+
+
+
+

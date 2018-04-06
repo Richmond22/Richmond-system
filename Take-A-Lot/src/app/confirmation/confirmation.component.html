@@ -1,0 +1,46 @@
+<img src="https://myofficemagazine.co.za/wp-content/uploads/2017/11/46105618_l.jpg" width="1110" height="300">
+
+<div class="card text-left">
+    <div class="card-header">
+      confirm Order
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Order details</h5>
+      <i class="fa fa-star" aria-hidden="true"></i>Order Number : #{{id}} <br>
+      <i class="fa fa-calendar" aria-hidden="true"></i> Day created : {{day}} <br>
+
+      <i class="fa fa-truck" aria-hidden="true"></i>delivery date : {{deliveryDay}}<br> 
+      <i class="fa fa-money" aria-hidden="true"></i>Total cost : R  {{total}} <br>
+
+
+<table class="table table-striped">
+    <thead>
+      <h3>Items in Order</h3>
+      <tr class="table-active"> 
+        <th scope="col">Product</th>
+        <th scope="col">Product name</th>
+        <th scope="col">Unit Price</th>
+        <th scope="col">Quantity</th>
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cart of  CartService.cartlist">
+        
+        <td>
+          <img  src="assets/img/{{cart.imgName}}" width="50" height="50">
+        </td>
+         
+        
+        <td>{{cart.name}}  {{cart.model}}</td>
+        
+        <td>R {{cart.price}}</td>
+        <td>{{cart.quantity}}</td>
+      </tr>
+    </tbody>
+  </table>
+      
+      <a (click)="ondelete()" routerLink ="/home-page" class="btn btn-outline-success">CHECKOUT</a>
+    </div>
+    
+  </div>

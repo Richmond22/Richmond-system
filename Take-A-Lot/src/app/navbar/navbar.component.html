@@ -1,0 +1,46 @@
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand"  routerLink="/home-page">
+      <img src="https://i2.wp.com/www.htxt.co.za/wp-content/uploads/2014/11/logo-wht1.jpg?resize=658%2C333&ssl=1" width="200" height="60" class="d-inline-block align-top">
+    </a>
+    <ul class="nav justify-content-end">
+
+        <li  *ngIf="!log" class="nav-item">
+          
+          <a  class=" nav-link active"  routerLink="/sign-in">
+            <i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
+        </li>
+        <li *ngIf="log" class="nav-item">
+            <a  class="nav-link active"  >Hi {{name}}</a>
+          </li>
+        <li *ngIf="log" class="nav-item">
+          <a (click)= "logout()" class="nav-link active" routerLink="/sign-in">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+        </li>
+        
+          <li *ngIf="!log" class="nav-item">
+            <a  class="nav-link" routerLink="/sign-up"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a>
+          </li>
+          <li *ngIf  ="!cust" class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-user-circle" aria-hidden="true"></i>My account</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item " >My account</a>
+                <a class="dropdown-item" routerLink="/personal-details">Personal details</a>
+                <a class="dropdown-item" routerLink="/invoice">Invoices</a>
+                <a class="dropdown-item" routerLink="/cart">view cart</a>
+                
+                </div>
+            </li>
+            <li *ngIf  ="!cust">
+              <button type="button" class="btn btn-primary" >
+                <i class="fa fa-cart-arrow-down" routerLink="/cart" aria-hidden="true"></i>
+              </button>
+            </li>
+
+        
+       
+        
+      </ul>
+  </nav>
+  
+  <router-outlet></router-outlet>
