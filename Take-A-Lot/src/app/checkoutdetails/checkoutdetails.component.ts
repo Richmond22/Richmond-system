@@ -11,12 +11,14 @@ import { Router } from '@angular/router';
 import { PayService } from './shared/pay.service';
 import { Payment } from './shared/payment.model';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ProductsService } from '../products/shared/products.service';
+import { Products } from '../products/shared/products.model';
 
 @Component({
   selector: 'app-checkoutdetails',
   templateUrl: './checkoutdetails.component.html',
   styleUrls: ['./checkoutdetails.component.css'],
-  providers : [CartService,AddressService,OrderService,PayService]
+  providers : [CartService,AddressService,OrderService,PayService,ProductsService]
 })
 export class CheckoutdetailsComponent implements OnInit {
   adres : any;
@@ -30,10 +32,13 @@ export class CheckoutdetailsComponent implements OnInit {
   paid : boolean;
   pay : Payment
   meth : Payment;
+  newQauantity : number;
+  product : Products;
+  quantity : number;
  
   constructor(private CartService : CartService, private AddressService : AddressService
     ,private OrderService : OrderService,private toastr:ToastrService,private router : Router
-  ,private PayService : PayService) { }
+  ,private PayService : PayService,private productServices : ProductsService) { }
 
   ngOnInit() {
     this.method = "";
@@ -140,6 +145,7 @@ navig()
   } 
 proceed()
 {
+  this.updateProduct();
   this.payMen();
   this.navig();
 }
@@ -169,6 +175,25 @@ payMen(){
       .subscribe(data =>{
       })
     });
+}
+
+updateProduct()
+{
+  for (var i = 0; i < this.CartService.cartlist.length; i++) 
+  {
+    
+    localStorage.setItem("quantity",this.CartService.cartlist[i].quantity+"")
+   this.productServices.getbyid(this.CartService.cartlist[i].productID)
+   .subscribe((data : any)=>{
+     this.product = Object.assign({},data.json());
+     this.newQauantity = (this.product.quantity - (+localStorage.getItem("quantity")))
+     this.product.quantity = this.newQauantity;
+    localStorage.setItem("test",this.product.quantity+"")
+     this.productServices.Putproduct(this.product.productID,this.product)
+     .subscribe((a : any)=>{});
+   })
+   
+  }
 }
 
    

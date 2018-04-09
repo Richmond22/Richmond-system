@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -6,6 +7,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Runtime.Remoting.Contexts;
 using System.Web.Http;
 using System.Web.Http.Description;
 using Take_A_Lot_webAPI.Models;
@@ -59,7 +61,20 @@ namespace Take_A_Lot_webAPI.Controllers
                 return BadRequest();
             }
 
-            db.Entry(tblproduct).State = EntityState.Modified;
+            var pr = db.Tblproducts.SingleOrDefault(x => x.productID == id);
+      
+            if (pr != null)
+            {
+                pr.quantity = tblproduct.quantity;
+                pr.price = tblproduct.price;
+
+                db.SaveChanges();
+            }
+
+
+           // db.Entry(tblproduct).State = EntityState.Modified;
+
+         
 
             try
             {

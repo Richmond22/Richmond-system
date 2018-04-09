@@ -4,12 +4,14 @@ import { OrderItems } from '../checkoutdetails/shared/order-items.model';
 import { Order } from '../checkoutdetails/shared/order.model';
 import { CartService } from '../home-page/shared/cart.service';
 import { ToastrService } from 'ngx-toastr';
+import { ProductsService } from '../products/shared/products.service';
+import { Products } from '../products/shared/products.model';
 
 @Component({
   selector: 'app-confirmation',
   templateUrl: './confirmation.component.html',
   styleUrls: ['./confirmation.component.css'],
-  providers : [CartService,OrderService]
+  providers : [CartService,OrderService,ProductsService]
 })
 export class ConfirmationComponent implements OnInit {
  total : string;
@@ -26,9 +28,12 @@ export class ConfirmationComponent implements OnInit {
  mm1 : number; 
  yyyy1 : number;
  id : number;
+ newQauantity : number;
+ product : Products;
+ newProduct : Products;
 
   constructor(private CartService : CartService,private OrderService : OrderService,
-  private toastr : ToastrService) { }
+  private toastr : ToastrService,private productServices: ProductsService) { }
 
   ngOnInit() {
     this.total = localStorage.getItem("total")
@@ -56,13 +61,13 @@ this.deliveryDay = this.mm1 + '/' + this.dd1 +'/' + this.yyyy1;
   }
 
 
-  ondelete()
+ondelete()
 {
   this.orderItems()
   for (var i = 0; i < this.CartService.cartlist.length; i++) 
   {
     this.OrderService.deleteCart(this.CartService.cartlist[i].cartID)
-  .subscribe(x =>{});
+  .subscribe();
 }
  this.toastr.info('Purchase successfuly completed','Purchase');
 }
@@ -70,7 +75,7 @@ this.deliveryDay = this.mm1 + '/' + this.dd1 +'/' + this.yyyy1;
 
 orderItems(){
   for (var i = 0; i < this.CartService.cartlist.length; i++) 
-  {
+  { 
     this.OrderItems ={
       itemlist : 0,
       OrderID : this.id,
@@ -82,8 +87,4 @@ orderItems(){
       });
   }
 }
-
-
-
-
 }

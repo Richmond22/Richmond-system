@@ -9,6 +9,7 @@ import { Order } from '../checkoutdetails/shared/order.model';
 import { OrderService } from '../checkoutdetails/shared/order.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Products } from '../products/shared/products.model';
 
 @Component({
   selector: 'app-cart',
@@ -21,8 +22,10 @@ export class CartComponent implements OnInit {
   total : number;
   items : number;
   updated : boolean;
- 
-  product : ProductsService;
+  product : Products;
+  available : boolean;
+  asked : number;
+  //product : ProductsService;
   c : object;
   customerdetails : any;
   
@@ -33,6 +36,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
 
+   this.available = true;
     this.ProductService.getProductList()
     this.updated = false;
     this.signupService.getCustomerClaims().subscribe((res : any )=>{
@@ -45,19 +49,32 @@ export class CartComponent implements OnInit {
   }
  //update selected item from the list
 Selected(event, cart : Cartdetails) {
-    console.log(event.target.value)
-     this.c ={
-        cartID : cart.cartID,
-        customerID : cart.customerID,
-        quantity : event.target.value,
-        productID : cart.productID
-        };
+  this.asked = event.target.value,
+    this.ProductService.getbyid(cart.productID).subscribe((data : any)=>{
+      this.product = data.json();
+      if(this.product.quantity >= event.target.value)
+      {
+        this.c ={
+          cartID : cart.cartID,
+          customerID : cart.customerID,
+          quantity : event.target.value,
+          productID : cart.productID
+          };
+  
+         
+      this.CartService.Putcart(cart.cartID,this.c).subscribe(data =>{  
+        this.updated = true;
+        this.CartService.getCartList();
+        this.available = true
+      });
 
-       
-    this.CartService.Putcart(cart.cartID,this.c).subscribe(data =>{  
-      this.updated = true;
-      this.CartService.getCartList();
-    });
+      }
+      else
+      {
+          this.available = false;
+      }
+    })
+     
     
 }
 

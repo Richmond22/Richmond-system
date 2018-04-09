@@ -30,7 +30,11 @@
             <td style="color:blue">{{cart.name}}</td>
             <td style="color:blue">{{cart.model}}</td>
             <td onload="calcTot(cart.price)">R {{cart.price}}</td>
-            <td>{{cart.quantity}}</td>
+            <td>{{cart.quantity}}
+              <div *ngIf="!available" class="alert alert-danger" role="alert">
+                you asked for {{asked}} and we only have have {{product.quantity}} available!
+                </div>
+            </td>
             <td>
               <fieldset>
                 <p>

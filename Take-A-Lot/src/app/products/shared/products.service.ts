@@ -69,10 +69,9 @@ export class ProductsService {
    }
 
    getbyid(id){
-    this.http.get("http://localhost:49513/api/Tblproduct?id="+id)
-    .map((data : any)=>{
-      return data;
-    });
+      return this.http.get("http://localhost:49513/api/Tblproduct?id="+id)
+      
+  
     }
    
 
