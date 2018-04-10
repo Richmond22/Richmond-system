@@ -89,6 +89,7 @@
                         <th scope="col" ><p align="left">Product Name</p> </th>
                         <th scope="col"><p align="left">Product model</p></th>
                         <th scope="col"><p align="left">Quantity</p></th>
+                        <th scope="col"><p align="left">Status</p></th>
                         
                       </tr>
                     </thead>
@@ -97,8 +98,14 @@
                     <tr *ngFor="let product of ProductService.productlist">
                       
                         <th  scope="row"><p align="left">{{product.name}}</p></th>
+                       
                         <td ><p align="left">{{product.model}}</p></td>
                         <td ><p align="left">{{product.quantity}}</p></td>
+                        <td >
+                          <p class="p1" align="left" *ngIf = "product.quantity < 20" >{{status(product.quantity)}}</p>
+                          <p class="p2" align="left" *ngIf = "product.quantity >= 20">{{status(product.quantity)}}</p>
+                        </td>
+                        
                         
                       </tr>
                     </tbody>

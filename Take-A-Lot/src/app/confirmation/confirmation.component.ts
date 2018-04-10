@@ -36,6 +36,7 @@ export class ConfirmationComponent implements OnInit {
   private toastr : ToastrService,private productServices: ProductsService) { }
 
   ngOnInit() {
+    this.OrderService.getOrder().subscribe();
     this.total = localStorage.getItem("total")
     this.CartService.getCartList();
     var today = new Date();

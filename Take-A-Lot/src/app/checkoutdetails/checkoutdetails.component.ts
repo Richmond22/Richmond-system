@@ -188,14 +188,14 @@ updateProduct()
      this.product = Object.assign({},data.json());
      this.newQauantity = (this.product.quantity - (+localStorage.getItem("quantity")))
      this.product.quantity = this.newQauantity;
-    localStorage.setItem("test",this.product.quantity+"")
+   
      this.productServices.Putproduct(this.product.productID,this.product)
      .subscribe((a : any)=>{});
    })
    
   }
+  
 }
-
    
  }
  

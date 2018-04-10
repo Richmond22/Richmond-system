@@ -19,6 +19,8 @@ export class SupplierPageComponent implements OnInit {
   sup : any
   id : number;
   login : boolean;
+  stats : string;
+  
 
   constructor(private ProductService : ProductsService,private ScheduleService : ScheduleService,
   private EmployeesServices : EmployeesService,private toastr : ToastrService ) { 
@@ -75,6 +77,21 @@ export class SupplierPageComponent implements OnInit {
     })
 
   }
+  status(quantity : number){
+  
+    if(quantity >= 20)
+    {
+      this.stats  = "Product enough in store";
+      
+    }else
+    {
+      this.stats = "Product running out"
+      
+    }
+    return this.stats
+
+  }
+
   
 
 

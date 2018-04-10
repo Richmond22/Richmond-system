@@ -103,15 +103,6 @@ namespace Take_A_Lot_webAPI.Controllers
             var items = db.OrderItems.Where(x => x.OrderID == id);
             db.OrderItems.RemoveRange(items);
             db.SaveChanges();
-            //var orders = db.Tblorders.Find(id);
-            
-           
-            //db.SaveChanges();
-
-            //if (tblorder == null)
-            //{
-            //    return NotFound();
-            //}
 
             db.Tblorders.Remove(tblorder);
             db.SaveChanges();

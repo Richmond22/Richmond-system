@@ -20,7 +20,7 @@ export class SignInComponent implements OnInit {
   try : boolean;
   check : string;
   
-  constructor(private signUpService: SignupService,private router : Router,private http :Http
+  constructor(private signUpService: SignupService,private router : Router
     ,private toastr:ToastrService) { }
 
   ngOnInit() {
@@ -35,10 +35,7 @@ export class SignInComponent implements OnInit {
      
       this.isLogin= true;
       this.signUpService.logged = true;
-      //this.toastr.success('login successful','login');
-      
-      
-      
+    
         if(('@admin.com')===Email.substr(-10)){
         this.router.navigate(['/admin-page']);
         localStorage.setItem("role","emp");

@@ -67,12 +67,10 @@ namespace Take_A_Lot_webAPI.Controllers
             {
                 pr.quantity = tblproduct.quantity;
                 pr.price = tblproduct.price;
-
-                db.SaveChanges();
             }
 
 
-           // db.Entry(tblproduct).State = EntityState.Modified;
+           
 
          
 
