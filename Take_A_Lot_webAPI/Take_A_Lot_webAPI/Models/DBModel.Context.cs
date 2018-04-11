@@ -33,10 +33,10 @@ namespace Take_A_Lot_webAPI.Models
         public virtual DbSet<Tblproduct> Tblproducts { get; set; }
         public virtual DbSet<Tbladdress> Tbladdresses { get; set; }
         public virtual DbSet<OrderItem> OrderItems { get; set; }
-        public virtual DbSet<Tblorder> Tblorders { get; set; }
         public virtual DbSet<eft> efts { get; set; }
         public virtual DbSet<payment> payments { get; set; }
         public virtual DbSet<Tblcredit> Tblcredits { get; set; }
         public virtual DbSet<TblSchedule> TblSchedules { get; set; }
+        public virtual DbSet<Tblorder> Tblorders { get; set; }
     }
 }

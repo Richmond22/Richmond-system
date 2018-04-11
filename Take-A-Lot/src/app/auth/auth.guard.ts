@@ -13,4 +13,12 @@ export class AuthGuard implements CanActivate {
     this.router.navigate(['/sign-in']);
     return false;
   }
+  canActivateAdmin(
+    next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot):boolean {
+    if(localStorage.getItem('Auth')=="admin")
+    return true;
+    this.router.navigate(['/sign-in']);
+    return false;
+  }
 }

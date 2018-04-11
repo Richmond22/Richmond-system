@@ -58,8 +58,13 @@ namespace Take_A_Lot_webAPI.Controllers
                 return BadRequest();
             }
 
-            db.Entry(tblorder).State = EntityState.Modified;
+            var ord = db.Tblorders.SingleOrDefault(x => x.OrderID == id);
 
+            if (ord != null)
+            {
+                ord.DeliveryStatus = tblorder.DeliveryStatus;
+                
+            }
             try
             {
                 db.SaveChanges();

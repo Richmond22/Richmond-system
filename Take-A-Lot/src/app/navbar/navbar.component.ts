@@ -30,6 +30,7 @@ export class NavbarComponent implements OnInit {
     localStorage.removeItem('token');
     localStorage.removeItem("role");
     localStorage.removeItem("name")
+    localStorage.removeItem("Auth");
     this.signUpServices.logged
     this.in();
     this.iscus();

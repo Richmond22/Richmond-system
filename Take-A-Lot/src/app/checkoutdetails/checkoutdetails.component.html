@@ -13,9 +13,19 @@
 
     
 <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalCenter">
-    <i class="fa fa-plus" aria-hidden="true"></i> Add new Address
+    <i class="fa fa-plus" aria-hidden="true"></i> Add/update Address
   </button>
-  
+  <div *ngIf="AddressService.address">
+    <b style="color:rebeccapurple">
+        {{AddressService.address.address1}} 
+        {{AddressService.address.address2}} <br>
+        {{AddressService.address.suburb}} <br>
+        {{AddressService.address.city}} <br>
+        {{AddressService.address.zip}}
+
+    </b>
+       
+  </div>
   
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -132,4 +142,4 @@
 
       </div>
     </div>
-    <button [disabled]="!paid"  (click)="proceed()" type="button" class="btn btn-primary btn-lg btn-block">Proceed</button>
+    <button [disabled]="!paid || !AddressAvilable"  (click)="proceed()" type="button" class="btn btn-primary btn-lg btn-block">Proceed</button>

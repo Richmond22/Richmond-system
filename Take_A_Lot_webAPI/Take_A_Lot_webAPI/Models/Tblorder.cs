@@ -25,6 +25,7 @@ namespace Take_A_Lot_webAPI.Models
         public string date { get; set; }
         public Nullable<int> totalCost { get; set; }
         public string deliveryDate { get; set; }
+        public string DeliveryStatus { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderItem> OrderItems { get; set; }

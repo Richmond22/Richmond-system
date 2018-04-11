@@ -3,5 +3,6 @@ export class Order {
     customerID : number;
      date : string;
      totalCost : number;
-     deliveryDate : string
+     deliveryDate : string;
+     DeliveryStatus : string;
 }

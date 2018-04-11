@@ -33,7 +33,13 @@
               Order ID : {{order.OrderID}} <br>
               Customer ID : {{order.customerID}} <br>
               Order Date : {{order.date}} <br>
-              Order Date : {{order.deliveryDate}} <br>
+              <div *ngIf="!status(order)">
+                  delivery Date : {{order.deliveryDate}} 
+              </div>
+              <div *ngIf="status(order)">
+                  delivery Date : {{order.DeliveryStatus}} 
+              </div>
+              
             </div>
             <div class="card-body">
               <blockquote class="blockquote mb-0">

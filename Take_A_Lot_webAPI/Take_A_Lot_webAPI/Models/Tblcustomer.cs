@@ -19,8 +19,8 @@ namespace Take_A_Lot_webAPI.Models
         {
             this.Tblcarts = new HashSet<Tblcart>();
             this.Tbladdresses = new HashSet<Tbladdress>();
-            this.Tblorders = new HashSet<Tblorder>();
             this.payments = new HashSet<payment>();
+            this.Tblorders = new HashSet<Tblorder>();
         }
     
         public int customerID { get; set; }
@@ -35,8 +35,8 @@ namespace Take_A_Lot_webAPI.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tbladdress> Tbladdresses { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tblorder> Tblorders { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<payment> payments { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Tblorder> Tblorders { get; set; }
     }
 }

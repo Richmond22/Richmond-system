@@ -108,7 +108,8 @@ CreateOrder(){
       customerID : +localStorage.getItem("ID"),
       date : this.dd + '/' + this.mm + '/' +  this.yyyy,
       totalCost : +localStorage.getItem("total"),
-      deliveryDate : this.deliveryDay = this.dd1 +'/' + this.mm1 + '/' +  this.yyyy1
+      deliveryDate : this.deliveryDay = this.dd1 +'/' + this.mm1 + '/' +  this.yyyy1,
+      DeliveryStatus : "Not Delivered"
         };
   this.OrderService.PostOrder(this.Order)
   .subscribe(data =>{

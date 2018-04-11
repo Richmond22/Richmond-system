@@ -77,8 +77,6 @@ import { InvoiceComponent } from './invoice/invoice.component';
     HttpModule,
     ToastrModule.forRoot(),
     HttpClientModule,
-    ChartsModule,
-    FusionChartsModule.forRoot(FusionCharts, Charts),
     RouterModule.forRoot([
       {path: 'sign-up', component: SignUpComponent},
       {path: 'sign-in', component: SignInComponent},

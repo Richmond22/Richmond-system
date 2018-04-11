@@ -19,7 +19,7 @@ namespace Take_A_Lot_webAPI.Models
         public Nullable<int> productID { get; set; }
         public Nullable<int> quantity { get; set; }
     
-        public virtual Tblorder Tblorder { get; set; }
         public virtual Tblproduct Tblproduct { get; set; }
+        public virtual Tblorder Tblorder { get; set; }
     }
 }

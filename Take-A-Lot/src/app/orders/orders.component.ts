@@ -13,6 +13,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
   providers : [OrderService]
 })
 export class OrdersComponent implements OnInit {
+  deliverd : boolean;
  
   constructor(private OrderService : OrderService) { }
 
@@ -30,6 +31,16 @@ export class OrdersComponent implements OnInit {
       this.OrderService.getOrderList();
     });
     
+  }
+  status(order: Order){
+    if(order.DeliveryStatus == "Delivered")
+    {
+      this.deliverd = true;
+    }
+    else{
+      this.deliverd = false;
+    }
+    return this.deliverd;
   }
  
 }

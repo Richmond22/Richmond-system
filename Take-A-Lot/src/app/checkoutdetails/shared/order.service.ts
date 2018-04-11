@@ -63,6 +63,13 @@ orderList : Order[];
     })
  }
 
+ PutOrder(id : number,order : object){
+  var body = JSON.stringify(order);
+  var headerOptions = new Headers({'Content-type' : 'application/json'});
+  var requestOptions = new RequestOptions({method : RequestMethod.Put,headers:headerOptions})
+  return this.http.put("http://localhost:49513/api/Tblorder?id="+id,body,requestOptions)
+ }
+
 
    deleteCart(id: number){
     return this.http.delete("http://localhost:49513/api/Tblcart?id="+id).map(res => res.json());

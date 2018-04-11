@@ -3,6 +3,7 @@ import { OrderService } from '../checkoutdetails/shared/order.service';
 import { AddressService } from '../checkoutdetails/shared/address.service';
 import { Address } from '../checkoutdetails/shared/address.model';
 import { EmployeesService } from '../shared/employees.service';
+import { Order } from '../checkoutdetails/shared/order.model';
 
 @Component({
   selector: 'app-driver-page',
@@ -14,6 +15,7 @@ export class DriverPageComponent implements OnInit {
  add : Address;
  name : any
  login : boolean;
+ delivered : boolean;
   constructor(private OrderService : OrderService,private AddressServices : AddressService,
   private EmployeeServices : EmployeesService) { }
 
@@ -42,6 +44,22 @@ export class DriverPageComponent implements OnInit {
   }
   printA(){
     window.print();
+  }
+  updateStatus(order : Order)
+  {
+    order.DeliveryStatus = "Delivered"
+    this.OrderService.PutOrder(order.OrderID,order).subscribe(x =>{
+      this.OrderService.getOrderList();
+    })
+  }
+  stats(order : Order){
+    if(order.DeliveryStatus == "Delivered")
+    {
+        this.delivered = true
+    }else{
+      this.delivered = false
+    }
+      return this.delivered;
   }
 
 }

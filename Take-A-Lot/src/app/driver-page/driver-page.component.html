@@ -7,7 +7,8 @@
     <div class="card form-control">
         <div class="card-header">
           Order ID : {{order.OrderID}} <br>
-          Customer ID : {{order.customerID}}
+          Customer ID : {{order.customerID}} <br>
+          Delivery Status : {{order.DeliveryStatus}}
         </div>
         <div class="card-body">
           <blockquote class="blockquote mb-0">
@@ -15,9 +16,10 @@
 
            
      <!-- Button trigger modal -->
-<button type="button"(click) = "Address(order.customerID)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    Delivery Address
-  </button>
+<button  type="button"(click) = "Address(order.customerID)" class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter">
+    Address
+  </button> ||
+  <button *ngIf="!stats(order)" type="button" (click)="updateStatus(order)" class="btn btn-link">Deliver</button>
   
   <!-- Modal -->
   <div class="modal fade" media="print" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

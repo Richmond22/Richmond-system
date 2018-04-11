@@ -97,17 +97,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Tblorders">
-      <EntityTypeMapping TypeName="systemDBModel.Tblorder">
-        <MappingFragment StoreEntitySet="Tblorder">
-          <ScalarProperty Name="deliveryDate" ColumnName="deliveryDate" />
-          <ScalarProperty Name="totalCost" ColumnName="totalCost" />
-          <ScalarProperty Name="date" ColumnName="date" />
-          <ScalarProperty Name="customerID" ColumnName="customerID" />
-          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="efts">
       <EntityTypeMapping TypeName="systemDBModel.eft">
         <MappingFragment StoreEntitySet="eft">
@@ -154,6 +143,18 @@
           <ScalarProperty Name="Sname" ColumnName="Sname" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="scheduleID" ColumnName="scheduleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tblorders">
+      <EntityTypeMapping TypeName="systemDBModel.Tblorder">
+        <MappingFragment StoreEntitySet="Tblorder">
+          <ScalarProperty Name="DeliveryStatus" ColumnName="DeliveryStatus" />
+          <ScalarProperty Name="deliveryDate" ColumnName="deliveryDate" />
+          <ScalarProperty Name="totalCost" ColumnName="totalCost" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="customerID" ColumnName="customerID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

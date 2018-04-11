@@ -39,19 +39,23 @@ export class SignInComponent implements OnInit {
         if(('@admin.com')===Email.substr(-10)){
         this.router.navigate(['/admin-page']);
         localStorage.setItem("role","emp");
+        localStorage.setItem("Auth","admin");
         
         }else if(('.driver@takealot.com')===Email.substr(-20)){
           this.router.navigate(['/driver-page']);
           localStorage.setItem("role","emp");
+          localStorage.setItem("Auth","driver");
          
         }else if(('.supplier@takealot.com')===Email.substr(-22)){
           this.router.navigate(['/supplier-page']);
           localStorage.setItem("role","emp");
+          localStorage.setItem("Auth","supplier");
           
         }
         else{
           localStorage.removeItem("role");
           this.router.navigate(['/home-page']);
+          localStorage.setItem("Auth","customer");
           
           
         }
