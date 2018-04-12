@@ -1,3 +1,18 @@
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+    </li>
+   
+  </ul>
+
+  
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      
+
 <div *ngIf="login" class="alert alert-success" role="alert">
     You're now logged in. Sweet.
   </div>
@@ -8,7 +23,9 @@
         <div class="card-header">
           Order ID : {{order.OrderID}} <br>
           Customer ID : {{order.customerID}} <br>
-          Delivery Status : {{order.DeliveryStatus}}
+          <div *ngIf="!stats(order)">Delivery Date : {{order.deliveryDate}}</div>
+          <div *ngIf="stats(order)">Delivery Status : {{order.DeliveryStatus}}</div>
+          
         </div>
         <div class="card-body">
           <blockquote class="blockquote mb-0">
@@ -18,8 +35,8 @@
      <!-- Button trigger modal -->
 <button  type="button"(click) = "Address(order.customerID)" class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter">
     Address
-  </button> ||
-  <button *ngIf="!stats(order)" type="button" (click)="updateStatus(order)" class="btn btn-link">Deliver</button>
+  </button>
+  <button *ngIf="!stats(order)" type="button" (click)="updateStatus(order)" class="btn btn-link">  Deliver</button>
   
   <!-- Modal -->
   <div class="modal fade" media="print" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -57,3 +74,54 @@
 
 
     </div>
+
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div *ngIf="updated" class="alert alert-success" role="alert">
+            Profile Updated.
+          </div>
+        <div *ngIf="EmployeeServices.employee" class="container-fluid">
+            <h3>UPDATE PROFILE</h3>
+              <form class="emp-form" #suppform="ngForm" (ngSubmit)="OnSubmitprofile(suppform)">
+                  <div class="form-row">
+                      
+                          <input type="hidden" class="form-control" name="ID" #ID="ngModel" [(ngModel)] ="EmployeeServices.employee.ID" required>
+                        
+                    <div class="col-md-4 mb-3">
+                      <label>First name</label>
+                      <input type="text" class="form-control" name="firstname" #firstname="ngModel" [(ngModel)] ="EmployeeServices.employee.firstname"  placeholder="First name" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <label >Last name</label>
+                      <input type="text" class="form-control" name="lastname" #lastname="ngModel" [(ngModel)] ="EmployeeServices.employee.lastname"   placeholder="Last name"  required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <label >Email</label>
+                      <div class="input-group">
+                        
+                        <input type="text" class="form-control" name="email" #email="ngModel"[(ngModel)] ="EmployeeServices.employee.email"  placeholder="Email" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                      <label>Password</label>
+                      <input type="password" class="form-control" name="password" #password="ngModel"[(ngModel)] ="EmployeeServices.employee.password" placeholder="Password" required>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                      <label >Phone</label>
+                      <input type="text" class="form-control" name="phone" #phone="ngModel"[(ngModel)] ="EmployeeServices.employee.phone" placeholder="Phone" required>
+                    </div>
+                  </div>
+                  
+                  <button class="btn btn-primary" type="submit">Update</button>
+                </form>
+              
+      
+          </div>
+
+    </div>
+   
+  </div>
+
+

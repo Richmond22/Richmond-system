@@ -4,6 +4,8 @@ import { AddressService } from '../checkoutdetails/shared/address.service';
 import { Address } from '../checkoutdetails/shared/address.model';
 import { EmployeesService } from '../shared/employees.service';
 import { Order } from '../checkoutdetails/shared/order.model';
+import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-driver-page',
@@ -16,13 +18,21 @@ export class DriverPageComponent implements OnInit {
  name : any
  login : boolean;
  delivered : boolean;
+ id : number;
+ updated : boolean = false;
   constructor(private OrderService : OrderService,private AddressServices : AddressService,
-  private EmployeeServices : EmployeesService) { }
+  private EmployeeServices : EmployeesService,private toastr : ToastrService) { }
 
   ngOnInit() {
+    this.updated = false;
     this.OrderService.getOrderList();
     this.EmployeeServices.getadmin().subscribe((res : any )=>{
       this.name = res.firstname;
+      this.id = res.ID;
+      this.EmployeeServices.getDrivererbyid(this.id)
+      .subscribe(x=>{
+        this.EmployeeServices.employee = Object.assign({},x.json());
+      })
       localStorage.setItem("name",this.name);
       
     });
@@ -60,6 +70,15 @@ export class DriverPageComponent implements OnInit {
       this.delivered = false
     }
       return this.delivered;
+  }
+  OnSubmitprofile(form : NgForm)
+  {
+        this.EmployeeServices.Putdriver(form.value.ID,form.value)
+        .subscribe(data =>{
+        this.updated = true;
+        })
+    
+    
   }
 
 }

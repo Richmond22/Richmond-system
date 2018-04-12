@@ -39,6 +39,17 @@ namespace Take_A_Lot_webAPI.Controllers
             };
             return model;
         }
+        public IHttpActionResult GetSupplier(int id)
+        {
+           
+            var supplier = db.suppliers.Find(id);
+            if (supplier == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(supplier);
+        }
 
         // PUT: api/supplier/5
         [ResponseType(typeof(void))]

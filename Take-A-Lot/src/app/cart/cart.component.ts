@@ -25,6 +25,7 @@ export class CartComponent implements OnInit {
   product : Products;
   available : boolean;
   asked : number;
+  quant : number;
   //product : ProductsService;
   c : object;
   customerdetails : any;
@@ -48,31 +49,35 @@ export class CartComponent implements OnInit {
      
   }
  //update selected item from the list
-Selected(event, cart : Cartdetails) {
-  this.asked = event.target.value,
+Selected( cart : Cartdetails) {
+  this.asked = parseInt
+  ((document.getElementById("Quantity") as HTMLInputElement).value);
+  //this.asked = event.target.value,
     this.ProductService.getbyid(cart.productID).subscribe((data : any)=>{
       this.product = data.json();
-      if(this.product.quantity >= event.target.value)
+      if(this.product.quantity >= this.asked)
       {
-        this.c ={
-          cartID : cart.cartID,
-          customerID : cart.customerID,
-          quantity : event.target.value,
-          productID : cart.productID
-          };
-  
-         
-      this.CartService.Putcart(cart.cartID,this.c).subscribe(data =>{  
-        this.updated = true;
-        this.CartService.getCartList();
         this.available = true
-      });
-
+        this.quant = this.asked
       }
       else
       {
+        this.quant = this.product.quantity;
           this.available = false;
       }
+      this.c ={
+        cartID : cart.cartID,
+        customerID : cart.customerID,
+        quantity : this.quant,
+        productID : cart.productID
+        };
+
+       
+    this.CartService.Putcart(cart.cartID,this.c).subscribe(data =>{  
+      this.updated = true;
+      this.CartService.getCartList();
+      
+    });
     })
      
     

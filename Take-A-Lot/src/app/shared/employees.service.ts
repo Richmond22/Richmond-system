@@ -94,6 +94,10 @@ export class EmployeesService {
     })
     
    }
+   getSupplierbyid(id){
+    return this.http.get("http://localhost:49513/api/supplier?id="+id)
+    
+  }
    getadmin(){
     return this.httpClient.get("http://localhost:49513/api/Getadmin", 
     {headers : new HttpHeaders({'Authorization' : 'Bearer ' + localStorage.getItem('token')})});
@@ -109,6 +113,10 @@ export class EmployeesService {
     {headers : new HttpHeaders({'Authorization' : 'Bearer ' + localStorage.getItem('token')})});
     
    }
+   getDrivererbyid(id){
+    return this.http.get("http://localhost:49513/api/driver?id="+id)
+    
+  }
 
    deletedsuplier(id){
     return this.http.delete("http://localhost:49513/api/supplier?id="+id).map(res => res.json());

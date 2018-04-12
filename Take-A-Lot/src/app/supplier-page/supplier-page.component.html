@@ -1,115 +1,187 @@
-<div *ngIf="login" class="alert alert-success" role="alert">
-    You're now logged in. Sweet.
-  </div>
-<img src="http://mybroadband.co.za/news/wp-content/uploads/2017/05/Takealot-JHB-distribution-centre-mezzanine-level-with-large-boxes.jpg" width="1100" height="500" >
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+  </li>
+ 
+  <li class="nav-item">
+      <a class="nav-link" id="schedule-tab" data-toggle="tab" href="#schedule" role="tab" aria-controls="schedule" aria-selected="false">Schedule Supply</a>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div *ngIf="login" class="alert alert-success" role="alert">
+      You're now logged in. Sweet.
+    </div>
 
-<div class="row">
-        <div class="card col">
-        
-                <div class="float-left"><div class="card-header">
-                      <h1>
-                              Schedule Supply
-                      </h1>
+    <div class="card text-center col">
+        <div class="card-header">
+          Warehouse
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Products in Store</h5>
+          <fieldset>
+              <p>
+                 <select  (change)="listby($event)" >
+                    <option >List By Category</option>
+                   <option value = "Computersandtablets" >Computers and tablets</option>
+                   <option value = "cellphoneandwearables">cellphone and wearables</option>
+                   <option value = "TV,Audioandvideo">TV,Audio and video</option>
+                   <option value = "Gaming">Gaming</option>
+                   <option value = "Cameras">Cameras</option>
+                   <option value = "shoes">shoes</option>
                    
-                  </div>
-                  <div class="card-body col">
-                    <blockquote class="blockquote mb-0">
-                          <form #schedule="ngForm" (ngSubmit)="OnSubmit(schedule)">
-                                  <div class="form-group row">
-                                    <label class="form-control-sm col-sm-2" >Supplier Name :</label>
-                                    <div class="col-sm-10">
-                                      <input type="text" class="form-control form-control-sm col-sm-4" name="Sname" #Sname="ngModel"[(ngModel)] ="ScheduleService.schedule.Sname" >
-                                      <input type="hidden" class="form-control form-control-sm col-sm-4" name="ID" #ID="ngModel"[(ngModel)] ="ScheduleService.schedule.ID" >
-                                    </div>
-                                  </div>
-                                  <div class="form-group row">
-                                      <label class="form-control-sm col-sm-2"  >Company Name :</label>
-                                      <div class="col-sm-10">
-                                        <input type="email" class="form-control form-control-sm col-sm-4" name="Cname" #Cname="ngModel"[(ngModel)] ="ScheduleService.schedule.Cname">
-                                      </div>
-                                    </div>
-                                    <div class="form-group row">
-                                          <label class="form-control-sm col-sm-2"  >Contacts details:</label>
-                                          <div class="col-sm-10">
-                                            <input type="email" class="form-control form-control-sm col-sm-4" name="contacts" #contacts="ngModel"[(ngModel)] ="ScheduleService.schedule.contacts" >
-                                          </div>
-                                        </div>
-                                    <div class="form-group row">
-                                        <label class="form-control-sm col-sm-2"  >Discription :</label>
-                                        <div class="col-sm-10">
-                                          <input type="email" class="form-control form-control-sm col-sm-4" name="discription" #discription="ngModel"[(ngModel)] ="ScheduleService.schedule.discription" >
-                                        </div>
-                                      </div>
-                                      <div class="form-group row">
-                                        <label class="form-control-sm col-sm-2"  >Quantity :</label>
-                                          <div class="col-sm-10">
-                                            <input type="email" class="form-control form-control-sm col-sm-4" name="quantity" #quantity="ngModel"[(ngModel)] ="ScheduleService.schedule.quantity">
-                                          </div>
-                                      </div>
-                                      <div class="form-group row">
-                                              <label class="form-control-sm col-sm-2"  >Supply Date :</label>
-                                                <div class="col-sm-10">
-                                                  <input type="email" class="form-control form-control-sm col-sm-4" name="date" #date="ngModel"[(ngModel)] ="ScheduleService.schedule.date" >
-                                                </div>
-                                          </div>
-                                          <button type="submit" class="btn btn-primary btn-sm">Schedule</button>
-                                </form>
-                                
-                    </blockquote>
-                  </div>
-                </div></div><br>
-               
-
-</div>
-      <div class="card text-center col">
-            <div class="card-header">
-              Warehouse
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Products in Store</h5>
-              <fieldset>
-                  <p>
-                     <select  (change)="listby($event)" >
-                        <option >List By Category</option>
-                       <option value = "Computersandtablets" >Computers and tablets</option>
-                       <option value = "cellphoneandwearables">cellphone and wearables</option>
-                       <option value = "TV,Audioandvideo">TV,Audio and video</option>
-                       <option value = "Gaming">Gaming</option>
-                       <option value = "Cameras">Cameras</option>
-                       <option value = "shoes">shoes</option>
-                       
-                     
-        
-                     </select>
-                  </p>
-               </fieldset>
-              <table class="table table-striped" >
-                    <thead>
-                      <tr>
-                        <th scope="col" ><p align="left">Product Name</p> </th>
-                        <th scope="col"><p align="left">Product model</p></th>
-                        <th scope="col"><p align="left">Quantity</p></th>
-                        <th scope="col"><p align="left">Status</p></th>
-                        
-                      </tr>
-                    </thead>
+                 
+    
+                 </select>
+              </p>
+           </fieldset>
+          <table class="table table-striped" >
+                <thead>
+                  <tr>
+                    <th scope="col" ><p align="left">Product Name</p> </th>
+                    <th scope="col"><p align="left">Product model</p></th>
+                    <th scope="col"><p align="left">Quantity</p></th>
+                    <th scope="col"><p align="left">Status</p></th>
                     
-                    <tbody text-align = "left">
-                    <tr *ngFor="let product of ProductService.productlist">
-                      
-                        <th  scope="row"><p align="left">{{product.name}}</p></th>
-                       
-                        <td ><p align="left">{{product.model}}</p></td>
-                        <td ><p align="left">{{product.quantity}}</p></td>
-                        <td >
-                          <p class="p1" align="left" *ngIf = "product.quantity < 20" >{{status(product.quantity)}}</p>
-                          <p class="p2" align="left" *ngIf = "product.quantity >= 20">{{status(product.quantity)}}</p>
-                        </td>
-                        
-                        
-                      </tr>
-                    </tbody>
-                  </table>
+                  </tr>
+                </thead>
+                
+                <tbody text-align = "left">
+                <tr *ngFor="let product of ProductService.productlist">
+                  
+                    <th  scope="row"><p align="left">{{product.name}}</p></th>
+                   
+                    <td ><p align="left">{{product.model}}</p></td>
+                    <td ><p align="left">{{product.quantity}}</p></td>
+                    <td >
+                      <p class="p1" align="left" *ngIf = "product.quantity < 20" >{{status(product.quantity)}}</p>
+                      <p class="p2" align="left" *ngIf = "product.quantity >= 20">{{status(product.quantity)}}</p>
+                    </td>
+                    
+                    
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        
+      </div>
+ 
+  </div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div *ngIf="EmployeesServices.employee" class="container-fluid">
+        <div *ngIf="updated" class="alert alert-success" role="alert">
+            Profile Updated.
+          </div>
+      <h3>UPDATE PROFILE</h3>
+        <form class="emp-form" #suppform="ngForm" (ngSubmit)="OnSubmitprofile(suppform)">
+            <div class="form-row">
+                
+                    <input type="hidden" class="form-control" name="ID" #ID="ngModel" [(ngModel)] ="EmployeesServices.employee.ID" required>
+                  
+              <div class="col-md-4 mb-3">
+                <label>First name</label>
+                <input type="text" class="form-control" name="firstname" #firstname="ngModel" [(ngModel)] ="EmployeesServices.employee.firstname"  placeholder="First name" required>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label >Last name</label>
+                <input type="text" class="form-control" name="lastname" #lastname="ngModel" [(ngModel)] ="EmployeesServices.employee.lastname"   placeholder="Last name"  required>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label >Email</label>
+                <div class="input-group">
+                  
+                  <input type="text" class="form-control" name="email" #email="ngModel"[(ngModel)] ="EmployeesServices.employee.email"  placeholder="Email" required>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-3 mb-3">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password" #password="ngModel"[(ngModel)] ="EmployeesServices.employee.password" placeholder="Password" required>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label >Phone</label>
+                <input type="text" class="form-control" name="phone" #phone="ngModel"[(ngModel)] ="EmployeesServices.employee.phone" placeholder="Phone" required>
+              </div>
             </div>
             
-          </div>
+            <button class="btn btn-primary" type="submit">Update</button>
+          </form>
+        
+
+    </div>
+    
+
+  </div>
+  
+  <div class="tab-pane fade" id="schedule" role="tabpanel" aria-labelledby="schedule-tab">
+    
+      <div class="row">
+          <div class="card col">
+          
+                  <div class="float-left"><div class="card-header">
+                        <h1>
+                                Schedule Supply
+                        </h1>
+                     
+                    </div>
+                    <div class="card-body col">
+                      <blockquote class="blockquote mb-0">
+                            <form #schedule="ngForm" (ngSubmit)="OnSubmit(schedule)">
+                                    <div class="form-group row">
+                                      <label class="form-control-sm col-sm-2" >Supplier Name :</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control form-control-sm col-sm-4" name="Sname" #Sname="ngModel"[(ngModel)] ="ScheduleService.schedule.Sname" >
+                                        <input type="hidden" class="form-control form-control-sm col-sm-4" name="ID" #ID="ngModel"[(ngModel)] ="ScheduleService.schedule.ID" >
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="form-control-sm col-sm-2"  >Company Name :</label>
+                                        <div class="col-sm-10">
+                                          <input type="email" class="form-control form-control-sm col-sm-4" name="Cname" #Cname="ngModel"[(ngModel)] ="ScheduleService.schedule.Cname">
+                                        </div>
+                                      </div>
+                                      <div class="form-group row">
+                                            <label class="form-control-sm col-sm-2"  >Contacts details:</label>
+                                            <div class="col-sm-10">
+                                              <input type="email" class="form-control form-control-sm col-sm-4" name="contacts" #contacts="ngModel"[(ngModel)] ="ScheduleService.schedule.contacts" >
+                                            </div>
+                                          </div>
+                                      <div class="form-group row">
+                                          <label class="form-control-sm col-sm-2"  >Discription :</label>
+                                          <div class="col-sm-10">
+                                            <input type="email" class="form-control form-control-sm col-sm-4" name="discription" #discription="ngModel"[(ngModel)] ="ScheduleService.schedule.discription" >
+                                          </div>
+                                        </div>
+                                        <div class="form-group row">
+                                          <label class="form-control-sm col-sm-2"  >Quantity :</label>
+                                            <div class="col-sm-10">
+                                              <input type="email" class="form-control form-control-sm col-sm-4" name="quantity" #quantity="ngModel"[(ngModel)] ="ScheduleService.schedule.quantity">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                                <label class="form-control-sm col-sm-2"  >Supply Date :</label>
+                                                  <div class="col-sm-10">
+                                                   
+                                                    <input type="date" class="form-control form-control-sm col-sm-4" name="date" #date="ngModel"[(ngModel)] ="ScheduleService.schedule.date" >
+                                                  </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary btn-sm">Schedule</button>
+                                  </form>
+                                  
+                      </blockquote>
+                    </div>
+                  </div></div><br>
+                 
+  
+  </div>
+  </div>
+</div>
+
+
+
+
+     

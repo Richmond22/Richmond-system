@@ -20,6 +20,7 @@ export class SupplierPageComponent implements OnInit {
   id : number;
   login : boolean;
   stats : string;
+  updated : boolean = false;
   
 
   constructor(private ProductService : ProductsService,private ScheduleService : ScheduleService,
@@ -31,10 +32,17 @@ export class SupplierPageComponent implements OnInit {
  
 
   ngOnInit() {
+    this.updated = false;
     this.resetForm()
+   
+      
     this.EmployeesServices.getsupplier().subscribe((res : any )=>{
       this.sup = res;
       this.id = this.sup.ID;
+      this.EmployeesServices.getSupplierbyid(this.id)
+      .subscribe(x=>{
+        this.EmployeesServices.employee = Object.assign({},x.json());
+      })
       this.ScheduleService.schedule.ID = this.id;
       localStorage.setItem("name",res.firstname)
     });
@@ -65,6 +73,8 @@ export class SupplierPageComponent implements OnInit {
     
     }
   }
+ 
+
   listby(event){
     this.ProductService.getbyCategory(event.target.value);
   }
@@ -76,6 +86,16 @@ export class SupplierPageComponent implements OnInit {
       this.toastr.success('Successfully Scheduled supply','Schedule');
     })
 
+  }
+  OnSubmitprofile(form : NgForm)
+  {
+        this.EmployeesServices.Putsupplier(form.value.ID,form.value)
+        .subscribe(data =>{
+          this.EmployeesServices.getsupplierList();
+          this.updated = true;
+        })
+    
+    
   }
   status(quantity : number){
   
