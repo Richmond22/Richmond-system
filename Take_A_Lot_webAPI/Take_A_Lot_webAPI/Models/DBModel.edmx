@@ -135,6 +135,7 @@
           <Property Name="price" Type="float" />
           <Property Name="quantity" Type="int" />
           <Property Name="imgName" Type="varchar" MaxLength="50" />
+          <Property Name="minQuantity" Type="int" />
         </EntityType>
         <EntityType Name="TblSchedule">
           <Key>
@@ -333,13 +334,8 @@
           <EntitySet Name="Admins" EntityType="systemDBModel.Admin" />
           <EntitySet Name="Tblcarts" EntityType="systemDBModel.Tblcart" />
           <EntitySet Name="Tblcustomers" EntityType="systemDBModel.Tblcustomer" />
-          <EntitySet Name="Tblproducts" EntityType="systemDBModel.Tblproduct" />
           <AssociationSet Name="FK_Tblcart_Tblcustomer" Association="systemDBModel.FK_Tblcart_Tblcustomer">
             <End Role="Tblcustomer" EntitySet="Tblcustomers" />
-            <End Role="Tblcart" EntitySet="Tblcarts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Tblcart_Tblproduct" Association="systemDBModel.FK_Tblcart_Tblproduct">
-            <End Role="Tblproduct" EntitySet="Tblproducts" />
             <End Role="Tblcart" EntitySet="Tblcarts" />
           </AssociationSet>
           <EntitySet Name="Tbladdresses" EntityType="systemDBModel.Tbladdress" />
@@ -348,10 +344,6 @@
             <End Role="Tbladdress" EntitySet="Tbladdresses" />
           </AssociationSet>
           <EntitySet Name="OrderItems" EntityType="systemDBModel.OrderItem" />
-          <AssociationSet Name="FK_OrderItems_Tblproduct" Association="systemDBModel.FK_OrderItems_Tblproduct">
-            <End Role="Tblproduct" EntitySet="Tblproducts" />
-            <End Role="OrderItem" EntitySet="OrderItems" />
-          </AssociationSet>
           <EntitySet Name="efts" EntityType="systemDBModel.eft" />
           <EntitySet Name="payments" EntityType="systemDBModel.payment" />
           <AssociationSet Name="FK_eft_payment" Association="systemDBModel.FK_eft_payment">
@@ -382,6 +374,15 @@
             <End Role="Tblorder" EntitySet="Tblorders" />
           </AssociationSet>
           <EntitySet Name="drivers" EntityType="systemDBModel.driver" />
+          <EntitySet Name="Tblproducts" EntityType="systemDBModel.Tblproduct" />
+          <AssociationSet Name="FK_OrderItems_Tblproduct" Association="systemDBModel.FK_OrderItems_Tblproduct">
+            <End Role="Tblproduct" EntitySet="Tblproducts" />
+            <End Role="OrderItem" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tblcart_Tblproduct" Association="systemDBModel.FK_Tblcart_Tblproduct">
+            <End Role="Tblproduct" EntitySet="Tblproducts" />
+            <End Role="Tblcart" EntitySet="Tblcarts" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="supplier">
           <Key>
@@ -432,20 +433,6 @@
           <NavigationProperty Name="payments" Relationship="systemDBModel.FK_payment_Tblcustomer" FromRole="Tblcustomer" ToRole="payment" />
           <NavigationProperty Name="Tblorders" Relationship="systemDBModel.FK_Tblorder_Tblcustomer" FromRole="Tblcustomer" ToRole="Tblorder" />
         </EntityType>
-        <EntityType Name="Tblproduct">
-          <Key>
-            <PropertyRef Name="productID" />
-          </Key>
-          <Property Name="productID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="price" Type="Double" />
-          <Property Name="quantity" Type="Int32" />
-          <Property Name="imgName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Tblcarts" Relationship="systemDBModel.FK_Tblcart_Tblproduct" FromRole="Tblproduct" ToRole="Tblcart" />
-          <NavigationProperty Name="OrderItems" Relationship="systemDBModel.FK_OrderItems_Tblproduct" FromRole="Tblproduct" ToRole="OrderItem" />
-        </EntityType>
         <Association Name="FK_Tblcart_Tblcustomer">
           <End Type="systemDBModel.Tblcustomer" Role="Tblcustomer" Multiplicity="1" />
           <End Type="systemDBModel.Tblcart" Role="Tblcart" Multiplicity="*" />
@@ -455,18 +442,6 @@
             </Principal>
             <Dependent Role="Tblcart">
               <PropertyRef Name="customerID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Tblcart_Tblproduct">
-          <End Type="systemDBModel.Tblproduct" Role="Tblproduct" Multiplicity="1" />
-          <End Type="systemDBModel.Tblcart" Role="Tblcart" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tblproduct">
-              <PropertyRef Name="productID" />
-            </Principal>
-            <Dependent Role="Tblcart">
-              <PropertyRef Name="productID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -505,21 +480,9 @@
           <Property Name="OrderID" Type="Int32" />
           <Property Name="productID" Type="Int32" />
           <Property Name="quantity" Type="Int32" />
-          <NavigationProperty Name="Tblproduct" Relationship="systemDBModel.FK_OrderItems_Tblproduct" FromRole="OrderItem" ToRole="Tblproduct" />
           <NavigationProperty Name="Tblorder" Relationship="systemDBModel.FK_OrderItems_Tblorder" FromRole="OrderItem" ToRole="Tblorder" />
+          <NavigationProperty Name="Tblproduct" Relationship="systemDBModel.FK_OrderItems_Tblproduct" FromRole="OrderItem" ToRole="Tblproduct" />
         </EntityType>
-        <Association Name="FK_OrderItems_Tblproduct">
-          <End Type="systemDBModel.Tblproduct" Role="Tblproduct" Multiplicity="0..1" />
-          <End Type="systemDBModel.OrderItem" Role="OrderItem" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tblproduct">
-              <PropertyRef Name="productID" />
-            </Principal>
-            <Dependent Role="OrderItem">
-              <PropertyRef Name="productID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="eft">
           <Key>
             <PropertyRef Name="ID" />
@@ -667,6 +630,45 @@
           <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="Tblproduct">
+          <Key>
+            <PropertyRef Name="productID" />
+          </Key>
+          <Property Name="productID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="price" Type="Double" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="imgName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="minQuantity" Type="Int32" />
+          <NavigationProperty Name="OrderItems" Relationship="systemDBModel.FK_OrderItems_Tblproduct" FromRole="Tblproduct" ToRole="OrderItem" />
+          <NavigationProperty Name="Tblcarts" Relationship="systemDBModel.FK_Tblcart_Tblproduct" FromRole="Tblproduct" ToRole="Tblcart" />
+        </EntityType>
+        <Association Name="FK_OrderItems_Tblproduct">
+          <End Type="systemDBModel.Tblproduct" Role="Tblproduct" Multiplicity="0..1" />
+          <End Type="systemDBModel.OrderItem" Role="OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tblproduct">
+              <PropertyRef Name="productID" />
+            </Principal>
+            <Dependent Role="OrderItem">
+              <PropertyRef Name="productID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tblcart_Tblproduct">
+          <End Type="systemDBModel.Tblproduct" Role="Tblproduct" Multiplicity="1" />
+          <End Type="systemDBModel.Tblcart" Role="Tblcart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tblproduct">
+              <PropertyRef Name="productID" />
+            </Principal>
+            <Dependent Role="Tblcart">
+              <PropertyRef Name="productID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -716,19 +718,6 @@
                 <ScalarProperty Name="lastname" ColumnName="lastname" />
                 <ScalarProperty Name="firstname" ColumnName="firstname" />
                 <ScalarProperty Name="customerID" ColumnName="customerID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Tblproducts">
-            <EntityTypeMapping TypeName="systemDBModel.Tblproduct">
-              <MappingFragment StoreEntitySet="Tblproduct">
-                <ScalarProperty Name="imgName" ColumnName="imgName" />
-                <ScalarProperty Name="quantity" ColumnName="quantity" />
-                <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="category" ColumnName="category" />
-                <ScalarProperty Name="model" ColumnName="model" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="productID" ColumnName="productID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -827,6 +816,20 @@
                 <ScalarProperty Name="lastname" ColumnName="lastname" />
                 <ScalarProperty Name="firstname" ColumnName="firstname" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tblproducts">
+            <EntityTypeMapping TypeName="systemDBModel.Tblproduct">
+              <MappingFragment StoreEntitySet="Tblproduct">
+                <ScalarProperty Name="minQuantity" ColumnName="minQuantity" />
+                <ScalarProperty Name="imgName" ColumnName="imgName" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="productID" ColumnName="productID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

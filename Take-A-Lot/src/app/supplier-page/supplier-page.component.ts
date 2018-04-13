@@ -5,6 +5,7 @@ import { ScheduleService } from './schedule.service';
 import { NgForm } from '@angular/forms';
 import { EmployeesService } from '../shared/employees.service';
 import { ToastrService } from 'ngx-toastr';
+import { Products } from '../products/shared/products.model';
 
 @Component({
   selector: 'app-supplier-page',
@@ -76,7 +77,13 @@ export class SupplierPageComponent implements OnInit {
  
 
   listby(event){
-    this.ProductService.getbyCategory(event.target.value);
+    if(event.target.value == "All"){
+      this.ProductService.getProductList();
+    }else
+    {
+      this.ProductService.getbyCategory(event.target.value);
+    }
+    
   }
   OnSubmit(form : NgForm)
   {
@@ -97,9 +104,9 @@ export class SupplierPageComponent implements OnInit {
     
     
   }
-  status(quantity : number){
+  status(product : Products){
   
-    if(quantity >= 20)
+    if(product.quantity >= product.minQuantity)
     {
       this.stats  = "Product enough in store";
       

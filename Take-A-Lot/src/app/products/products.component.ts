@@ -34,7 +34,8 @@ export class ProductsComponent implements OnInit {
     category : "",
     price : 0,
     quantity : 0,
-    imgName : ""
+    imgName : "",
+    minQuantity : 0
     }
   }
   OnSubmit(form : NgForm){
@@ -65,7 +66,8 @@ export class ProductsComponent implements OnInit {
           price : pro.price,
           model : pro.model,
           imgName : pro.imgName,
-          category : pro.category};
+          category : pro.category,
+        minQuantity : pro.minQuantity};
       this.ProductService.Putproduct(pro.productID,this.c).subscribe(data =>{ 
         this.ProductService.getProductList();
       });
@@ -82,7 +84,8 @@ export class ProductsComponent implements OnInit {
       price : this.pric,
       model : pro.model,
       imgName : pro.imgName,
-      category : pro.category};
+      category : pro.category,
+       minQuantity : pro.minQuantity};
     
       console.log(((document.getElementById("price") as HTMLInputElement).value))
   this.ProductService.Putproduct(pro.productID,this.c).subscribe(data =>{  

@@ -17,8 +17,8 @@ namespace Take_A_Lot_webAPI.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Tblproduct()
         {
-            this.Tblcarts = new HashSet<Tblcart>();
             this.OrderItems = new HashSet<OrderItem>();
+            this.Tblcarts = new HashSet<Tblcart>();
         }
     
         public int productID { get; set; }
@@ -28,10 +28,11 @@ namespace Take_A_Lot_webAPI.Models
         public Nullable<double> price { get; set; }
         public Nullable<int> quantity { get; set; }
         public string imgName { get; set; }
+        public Nullable<int> minQuantity { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tblcart> Tblcarts { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderItem> OrderItems { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Tblcart> Tblcarts { get; set; }
     }
 }

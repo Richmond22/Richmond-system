@@ -6,6 +6,7 @@ export class Products {
     price : number;
     quantity : number;
     imgName : string;
+    minQuantity : number;
     
 
 }

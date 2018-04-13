@@ -47,19 +47,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Tblproducts">
-      <EntityTypeMapping TypeName="systemDBModel.Tblproduct">
-        <MappingFragment StoreEntitySet="Tblproduct">
-          <ScalarProperty Name="imgName" ColumnName="imgName" />
-          <ScalarProperty Name="quantity" ColumnName="quantity" />
-          <ScalarProperty Name="price" ColumnName="price" />
-          <ScalarProperty Name="category" ColumnName="category" />
-          <ScalarProperty Name="model" ColumnName="model" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="productID" ColumnName="productID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Tbladdresses">
       <EntityTypeMapping TypeName="systemDBModel.Tbladdress">
         <MappingFragment StoreEntitySet="Tbladdress">
@@ -155,6 +142,20 @@
           <ScalarProperty Name="lastname" ColumnName="lastname" />
           <ScalarProperty Name="firstname" ColumnName="firstname" />
           <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tblproducts">
+      <EntityTypeMapping TypeName="systemDBModel.Tblproduct">
+        <MappingFragment StoreEntitySet="Tblproduct">
+          <ScalarProperty Name="minQuantity" ColumnName="minQuantity" />
+          <ScalarProperty Name="imgName" ColumnName="imgName" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="productID" ColumnName="productID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

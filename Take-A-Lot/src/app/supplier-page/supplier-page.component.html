@@ -25,7 +25,7 @@
           <fieldset>
               <p>
                  <select  (change)="listby($event)" >
-                    <option >List By Category</option>
+                    <option value = "All" >All</option>
                    <option value = "Computersandtablets" >Computers and tablets</option>
                    <option value = "cellphoneandwearables">cellphone and wearables</option>
                    <option value = "TV,Audioandvideo">TV,Audio and video</option>
@@ -57,8 +57,8 @@
                     <td ><p align="left">{{product.model}}</p></td>
                     <td ><p align="left">{{product.quantity}}</p></td>
                     <td >
-                      <p class="p1" align="left" *ngIf = "product.quantity < 20" >{{status(product.quantity)}}</p>
-                      <p class="p2" align="left" *ngIf = "product.quantity >= 20">{{status(product.quantity)}}</p>
+                      <p class="p1" align="left" *ngIf = "product.quantity < product.minQuantity" >{{status(product)}}</p>
+                      <p class="p2" align="left" *ngIf = "product.quantity >= 20">{{status(product)}}</p>
                     </td>
                     
                     

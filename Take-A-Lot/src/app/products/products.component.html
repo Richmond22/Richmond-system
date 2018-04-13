@@ -69,6 +69,10 @@
       <label >Quantity</label>
       <input type="number" min="1"class="form-control" name="quantity" #quantity="ngModel"[(ngModel)] ="ProductService.product.quantity"  required>
     </div>
+    <div class="col-md-3 mb-3">
+      <label >Min Quantity</label>
+      <input type="number" min="1"class="form-control" name="minQuantity" #minQuantity="ngModel"[(ngModel)] ="ProductService.product.minQuantity"  required>
+    </div>
   </div>
   <div class="col-md-3 mb-3">
     

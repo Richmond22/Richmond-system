@@ -130,6 +130,7 @@
     <Property Name="price" Type="float" />
     <Property Name="quantity" Type="int" />
     <Property Name="imgName" Type="varchar" MaxLength="50" />
+    <Property Name="minQuantity" Type="int" />
   </EntityType>
   <EntityType Name="TblSchedule">
     <Key>

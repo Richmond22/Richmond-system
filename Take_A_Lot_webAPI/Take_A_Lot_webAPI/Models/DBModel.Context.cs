@@ -29,7 +29,6 @@ namespace Take_A_Lot_webAPI.Models
         public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<Tblcart> Tblcarts { get; set; }
         public virtual DbSet<Tblcustomer> Tblcustomers { get; set; }
-        public virtual DbSet<Tblproduct> Tblproducts { get; set; }
         public virtual DbSet<Tbladdress> Tbladdresses { get; set; }
         public virtual DbSet<OrderItem> OrderItems { get; set; }
         public virtual DbSet<eft> efts { get; set; }
@@ -38,5 +37,6 @@ namespace Take_A_Lot_webAPI.Models
         public virtual DbSet<TblSchedule> TblSchedules { get; set; }
         public virtual DbSet<Tblorder> Tblorders { get; set; }
         public virtual DbSet<driver> drivers { get; set; }
+        public virtual DbSet<Tblproduct> Tblproducts { get; set; }
     }
 }
