@@ -8,6 +8,8 @@ import { Products } from '../products/shared/products.model';
 import { CartService } from './shared/cart.service';
 import { Cart } from './shared/cart.model';
 import { ToastrService } from 'ngx-toastr';
+import { HttpErrorResponse } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-home-page',
@@ -20,6 +22,7 @@ export class HomePageComponent implements OnInit {
   product : Products;
   cart : Cart;
   login : boolean;
+  
   constructor( private signupService : SignupService,private router : Router
   ,private ProductService : ProductsService,private cartService : CartService
 ,private toastr : ToastrService) {}
@@ -33,6 +36,7 @@ export class HomePageComponent implements OnInit {
     localStorage.setItem('ID',res.customerID);
     localStorage.setItem("name",this.customerdetails.firstname)
     })}
+    
     if(localStorage.getItem("token") != null)
     {
       this.login = true;

@@ -25,7 +25,6 @@ namespace Take_A_Lot_webAPI.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<driver> drivers { get; set; }
         public virtual DbSet<supplier> suppliers { get; set; }
         public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<Tblcart> Tblcarts { get; set; }
@@ -38,5 +37,6 @@ namespace Take_A_Lot_webAPI.Models
         public virtual DbSet<Tblcredit> Tblcredits { get; set; }
         public virtual DbSet<TblSchedule> TblSchedules { get; set; }
         public virtual DbSet<Tblorder> Tblorders { get; set; }
+        public virtual DbSet<driver> drivers { get; set; }
     }
 }

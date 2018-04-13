@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="systemDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="DBmodel" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="drivers" EntityType="systemDBModel.driver" />
     <EntitySet Name="suppliers" EntityType="systemDBModel.supplier" />
     <EntitySet Name="Admins" EntityType="systemDBModel.Admin" />
     <EntitySet Name="Tblcarts" EntityType="systemDBModel.Tblcart" />
@@ -54,18 +53,8 @@
       <End Role="Tblcustomer" EntitySet="Tblcustomers" />
       <End Role="Tblorder" EntitySet="Tblorders" />
     </AssociationSet>
+    <EntitySet Name="drivers" EntityType="systemDBModel.driver" />
   </EntityContainer>
-  <EntityType Name="driver">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-  </EntityType>
   <EntityType Name="supplier">
     <Key>
       <PropertyRef Name="ID" />
@@ -339,4 +328,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="driver">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="firstname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="lastname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

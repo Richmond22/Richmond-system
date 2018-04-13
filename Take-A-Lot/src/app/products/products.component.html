@@ -62,12 +62,12 @@
         <div class="input-group-prepend">
           <span class="input-group-text">R</span>
         </div>
-        <input type="text" class="form-control" name="price" #price="ngModel"[(ngModel)] ="ProductService.product.price"  required>
+        <input type="number" min="1" class="form-control" name="price" #price="ngModel"[(ngModel)] ="ProductService.product.price"  required>
       </div>
     </div>
     <div class="col-md-3 mb-3">
       <label >Quantity</label>
-      <input type="text" class="form-control" name="quantity" #quantity="ngModel"[(ngModel)] ="ProductService.product.quantity"  required>
+      <input type="number" min="1"class="form-control" name="quantity" #quantity="ngModel"[(ngModel)] ="ProductService.product.quantity"  required>
     </div>
   </div>
   <div class="col-md-3 mb-3">

@@ -23,6 +23,13 @@ export class CartService {
     var requestOptions = new RequestOptions({method : RequestMethod.Post,headers:headerOptions})
     return this.http.post('http://localhost:49513/api/Tblcart',body,requestOptions).map(x => x.json())
    }
+   Postcart1(cart : Cart){
+    var body = JSON.stringify(cart);
+    var headerOptions = new Headers({'Content-type' : 'application/json'});
+    var requestOptions = new RequestOptions({method : RequestMethod.Post,headers:headerOptions})
+    return this.http.post('http://localhost:49513/api/Carts',body,requestOptions).map(x => x.json())
+   }
+  
   updatecart(cart : Cart,id : number){
   
     var body = JSON.stringify(cart);

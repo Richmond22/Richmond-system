@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f2dc00e202ac466ebe77c14ae16a44a5" Name="Diagram1">
-        <EntityTypeShape EntityType="systemDBModel.driver" Width="1.5" PointX="2.25" PointY="0.5" />
         <EntityTypeShape EntityType="systemDBModel.supplier" Width="1.5" PointX="4.125" PointY="0.5" />
         <EntityTypeShape EntityType="systemDBModel.Admin" Width="1.5" PointX="0.5" PointY="0.5" />
         <EntityTypeShape EntityType="systemDBModel.Tblcart" Width="1.5" PointX="3.125" PointY="3.5" />
@@ -28,6 +27,7 @@
         <EntityTypeShape EntityType="systemDBModel.Tblorder" Width="1.5" PointX="2.75" PointY="11.75" />
         <AssociationConnector Association="systemDBModel.FK_OrderItems_Tblorder" />
         <AssociationConnector Association="systemDBModel.FK_Tblorder_Tblcustomer" />
+        <EntityTypeShape EntityType="systemDBModel.driver" Width="1.5" PointX="2.125" PointY="0.5" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

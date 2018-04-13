@@ -1,18 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="systemDBModelStoreContainer" CdmEntityContainer="DBmodel">
-    <EntitySetMapping Name="drivers">
-      <EntityTypeMapping TypeName="systemDBModel.driver">
-        <MappingFragment StoreEntitySet="driver">
-          <ScalarProperty Name="phone" ColumnName="phone" />
-          <ScalarProperty Name="password" ColumnName="password" />
-          <ScalarProperty Name="email" ColumnName="email" />
-          <ScalarProperty Name="lastname" ColumnName="lastname" />
-          <ScalarProperty Name="firstname" ColumnName="firstname" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="suppliers">
       <EntityTypeMapping TypeName="systemDBModel.supplier">
         <MappingFragment StoreEntitySet="supplier">
@@ -155,6 +143,18 @@
           <ScalarProperty Name="date" ColumnName="date" />
           <ScalarProperty Name="customerID" ColumnName="customerID" />
           <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="drivers">
+      <EntityTypeMapping TypeName="systemDBModel.driver">
+        <MappingFragment StoreEntitySet="driver">
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

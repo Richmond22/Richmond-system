@@ -20,12 +20,12 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="firstname" Type="varchar" MaxLength="50" />
-          <Property Name="lastname" Type="varchar" MaxLength="50" />
-          <Property Name="email" Type="varchar" MaxLength="50" />
-          <Property Name="password" Type="varchar" MaxLength="50" />
-          <Property Name="phone" Type="varchar" MaxLength="50" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="eft">
           <Key>
@@ -329,7 +329,6 @@
     <edmx:ConceptualModels>
       <Schema Namespace="systemDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="DBmodel" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="drivers" EntityType="systemDBModel.driver" />
           <EntitySet Name="suppliers" EntityType="systemDBModel.supplier" />
           <EntitySet Name="Admins" EntityType="systemDBModel.Admin" />
           <EntitySet Name="Tblcarts" EntityType="systemDBModel.Tblcart" />
@@ -382,18 +381,8 @@
             <End Role="Tblcustomer" EntitySet="Tblcustomers" />
             <End Role="Tblorder" EntitySet="Tblorders" />
           </AssociationSet>
+          <EntitySet Name="drivers" EntityType="systemDBModel.driver" />
           </EntityContainer>
-        <EntityType Name="driver">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="supplier">
           <Key>
             <PropertyRef Name="ID" />
@@ -667,24 +656,23 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="driver">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lastname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="systemDBModelStoreContainer" CdmEntityContainer="DBmodel">
-          <EntitySetMapping Name="drivers">
-            <EntityTypeMapping TypeName="systemDBModel.driver">
-              <MappingFragment StoreEntitySet="driver">
-                <ScalarProperty Name="phone" ColumnName="phone" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="lastname" ColumnName="lastname" />
-                <ScalarProperty Name="firstname" ColumnName="firstname" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="suppliers">
             <EntityTypeMapping TypeName="systemDBModel.supplier">
               <MappingFragment StoreEntitySet="supplier">
@@ -827,6 +815,18 @@
                 <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="customerID" ColumnName="customerID" />
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="drivers">
+            <EntityTypeMapping TypeName="systemDBModel.driver">
+              <MappingFragment StoreEntitySet="driver">
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
