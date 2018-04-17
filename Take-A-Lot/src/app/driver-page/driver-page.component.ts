@@ -45,6 +45,7 @@ export class DriverPageComponent implements OnInit {
       this.login = false;
     }
   }
+  //get delivery address by customerID
   Address(id){
     this.AddressServices.getDelieryAddress(id)
     .subscribe((res : any)=>
@@ -55,6 +56,7 @@ export class DriverPageComponent implements OnInit {
   printA(){
     window.print();
   }
+  //update order status
   updateStatus(order : Order)
   {
     order.DeliveryStatus = "Delivered"
@@ -71,6 +73,7 @@ export class DriverPageComponent implements OnInit {
     }
       return this.delivered;
   }
+  //Update driver profile details
   OnSubmitprofile(form : NgForm)
   {
         this.EmployeeServices.Putdriver(form.value.ID,form.value)

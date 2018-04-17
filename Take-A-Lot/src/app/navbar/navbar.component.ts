@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
   logout(){
     localStorage.removeItem('token');
     localStorage.removeItem("role");
-    localStorage.removeItem("name")
+    localStorage.removeItem("name"); 
     localStorage.removeItem("Auth");
     this.signUpServices.logged
     this.in();

@@ -21,7 +21,6 @@ import { PersonalDetailsComponent } from './personal-details/personal-details.co
 import {ToastrModule} from 'ngx-toastr'
 import { AuthGuard } from './auth/auth.guard';
 import { CartComponent } from './cart/cart.component';
-import { AddressComponent } from './address/address.component';
 import { PaymentComponent } from './payment/payment.component';
 import { AdminComponent } from './admin/admin.component';
 import { DriverPageComponent } from './driver-page/driver-page.component';
@@ -58,7 +57,7 @@ import { InvoiceComponent } from './invoice/invoice.component';
     ProductsComponent,
     PersonalDetailsComponent,
     CartComponent,
-    AddressComponent,
+
     PaymentComponent,
     AdminComponent,
     DriverPageComponent,
@@ -87,7 +86,6 @@ import { InvoiceComponent } from './invoice/invoice.component';
       {path: 'admin', component: AdminComponent,canActivate:[AuthGuard]},
       {path: 'driver', component: DriverComponent,canActivate:[AuthGuard]},
       {path: 'supplier', component: SupplierComponent,canActivate:[AuthGuard]},
-      {path: 'address', component: AddressComponent,canActivate:[AuthGuard]},
       {path: 'payment', component: PaymentComponent,canActivate:[AuthGuard]},
       {path: 'driver-page', component: DriverPageComponent,canActivate:[AuthGuard]},
       {path: 'supplier-page', component: SupplierPageComponent,canActivate:[AuthGuard]},

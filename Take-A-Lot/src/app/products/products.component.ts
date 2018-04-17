@@ -38,7 +38,7 @@ export class ProductsComponent implements OnInit {
     minQuantity : 0
     }
   }
-  OnSubmit(form : NgForm){
+  OnSubmit(form : NgForm){ 
     this.ProductService.Postproduct(form.value)
     .subscribe(data =>{
       this.resetForm(form);
@@ -74,7 +74,7 @@ export class ProductsComponent implements OnInit {
       
   }
   
-  update(price:number,pro : Products){
+  update(price:number,pro : Products){//update product details
     this.pric = parseFloat
   ((document.getElementById("price") as HTMLInputElement).value);
     this.c ={
@@ -94,7 +94,7 @@ export class ProductsComponent implements OnInit {
 
   }
 
-    onDelete(id: number){
+    onDelete(id: number){ //delete product from system
       this.ProductService.deleteitem(id)
       .subscribe(x =>{
         this.ProductService.getProductList();

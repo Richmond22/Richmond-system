@@ -114,7 +114,7 @@ navig()
 }
 
 
-
+//Add deliver address
   OnSubmit(form : NgForm){
    
 
@@ -135,7 +135,7 @@ navig()
     }
 
   }
-  
+  //calcute total price
   caltot() {  
     
     let sum = 0;
@@ -152,7 +152,7 @@ proceed()
   this.navig();
 }
 
-
+//Store payment method
 payMen(){
 
   this.pay ={
@@ -178,7 +178,7 @@ payMen(){
       })
     });
 }
-
+//update product details
 updateProduct()
 {
   for (var i = 0; i < this.CartService.cartlist.length; i++) 
@@ -188,7 +188,7 @@ updateProduct()
    this.productServices.getbyid(this.CartService.cartlist[i].productID)
    .subscribe((data : any)=>{
      this.product = Object.assign({},data.json());
-     this.newQauantity = (this.product.quantity - (+localStorage.getItem("quantity")))
+     this.newQauantity = (this.product.quantity - (+localStorage.getItem("quantity"))) // update quantity after purchase
      this.product.quantity = this.newQauantity;
    
      this.productServices.Putproduct(this.product.productID,this.product)

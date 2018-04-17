@@ -32,7 +32,7 @@ export class DriverComponent implements OnInit {
     }
   }
 
-  OnSubmit(form : NgForm)
+  OnSubmit(form : NgForm)//update/add driver
   {
     if(form.value.ID == 0){
       this.EmployeeService.Postdriver(form.value)
@@ -52,12 +52,12 @@ export class DriverComponent implements OnInit {
     }
     
   }
-  showforEdit(ad : Employees)
+  showforEdit(ad : Employees)//populate form with driver details
   {
     this.EmployeeService.employee = Object.assign({},ad);
 
   }
-
+//delete driver
   onDelete(id : number)
   {
     if(confirm('Are you sure to delete this record ?')== true)

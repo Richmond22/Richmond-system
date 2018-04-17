@@ -31,7 +31,7 @@ export class AdminComponent implements OnInit {
     phone :  ""
     }
   }
-
+//Register and update admin details
   OnSubmit(form : NgForm)
   {
     if(form.value.ID == 0){
@@ -52,12 +52,13 @@ export class AdminComponent implements OnInit {
     }
     
   }
+  //populate form with admin details
   showforEdit(ad : Employees)
   {
     this.EmployeeService.employee = Object.assign({},ad);
 
   }
-
+//Remove admin from the system
   onDelete(id : number)
   {
     if(confirm('Are you sure to delete this record ?')== true)

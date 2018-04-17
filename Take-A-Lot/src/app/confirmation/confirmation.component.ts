@@ -62,7 +62,7 @@ this.deliveryDay = this.mm1 + '/' + this.dd1 +'/' + this.yyyy1;
   }
 
 
-ondelete()
+ondelete() // delete order
 {
   this.orderItems()
   for (var i = 0; i < this.CartService.cartlist.length; i++) 
@@ -73,7 +73,7 @@ ondelete()
  this.toastr.info('Purchase successfuly completed','Purchase');
 }
 
-
+//get order items
 orderItems(){
   for (var i = 0; i < this.CartService.cartlist.length; i++) 
   { 

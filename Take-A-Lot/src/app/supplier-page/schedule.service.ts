@@ -16,19 +16,19 @@ export class ScheduleService {
   constructor(private http : Http) { }
     
 
-  PostSchedule(schedule : Schedule){
+  PostSchedule(schedule : Schedule){//post supply schedule
     var body = JSON.stringify(schedule);
     var headerOptions = new Headers({'Content-type' : 'application/json'});
     var requestOptions = new RequestOptions({method : RequestMethod.Post,headers:headerOptions})
     return this.http.post('http://localhost:49513/api/TblSchedule',body,requestOptions).map(x => x.json())
    }
-   getSchedule(){
+   getSchedule(){//get scheduled supplies
     return this.http.get("http://localhost:49513/api/TblSchedule?id="+localStorage.getItem("ID"))
     }
-    Remove(id: number){
+    Remove(id: number){//remove schedule supply
       return this.http.delete("http://localhost:49513/api/TblSchedule?id="+id).map(res => res.json());
     }
-    getScheduleList(){
+    getScheduleList(){//get scheduled supply list
 
       this.http.get("http://localhost:49513/api/TblSchedule")
       .map((data : Response)=>{

@@ -48,7 +48,7 @@ export class HomePageComponent implements OnInit {
    
   }
 
-  searchby(event){
+  searchby(event){ //search items by category
     if(event.target.value == "all"){
       this.ProductService.getProductList();
     }else
@@ -59,7 +59,7 @@ export class HomePageComponent implements OnInit {
   }
 
 
-  addtocart(product : Products){
+  addtocart(product : Products){//add items to cart
     if(localStorage.getItem("token")!= null){
       this.cart ={
             cartID : 0,

@@ -18,13 +18,13 @@ export class SignupService {
   
   constructor( private http: Http,private httpClient : HttpClient) { }
 
-  Postcustomer(customer : Customer){
+  Postcustomer(customer : Customer){//Register customer
    var body = JSON.stringify(customer);
    var headerOptions = new Headers({'Content-type' : 'application/json'});
    var requestOptions = new RequestOptions({method : RequestMethod.Post,headers:headerOptions})
    return this.http.post('http://localhost:49513/api/Tblcustomer',body,requestOptions).map(x => x.json())
   }
-  Putcustomer(customer : object,id ){
+  Putcustomer(customer : object,id ){ //update user profile
     var body = JSON.stringify(customer);
     var headerOptions = new Headers({'Content-type' : 'application/json'});
     var requestOptions = new RequestOptions({method : RequestMethod.Put,headers:headerOptions})
@@ -32,14 +32,14 @@ export class SignupService {
    }
 
 
-  userAuthentication(email, password)
+  userAuthentication(email, password)//get user token for login
   {
     var data = "username=" + email + "&password=" + password + "&grant_type=password";
     var reqHeader = new HttpHeaders({'Content-Type':'application/x-www-urlencoded'});
     return this.httpClient.post(this.rootUrl + 'token', data, {headers : reqHeader});
   }
 
- getCustomerClaims()
+ getCustomerClaims() //get customer profile
  {
    return this.httpClient.get(this.rootUrl + 'api/GetUserClaims', 
    {headers : new HttpHeaders({'Authorization' : 'Bearer ' + localStorage.getItem('token')})});

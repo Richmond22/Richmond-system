@@ -35,7 +35,7 @@ export class PersonalDetailsComponent implements OnInit {
     phone :  ""
     }
   }
-  OnSubmit(form : NgForm){
+  OnSubmit(form : NgForm){ //update personal details
     
     this.signUpService.Putcustomer(form.value,form.value.customerID)
     .subscribe(data =>{  

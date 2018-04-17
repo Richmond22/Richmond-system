@@ -20,7 +20,7 @@ export class AdminPageComponent implements OnInit {
 
   ngOnInit() {
 
-    this.ScheduleServices.getScheduleList();
+    this.ScheduleServices.getScheduleList();//Get Scheduled supply details
     this.EmployeeServices.getadmin().subscribe((res : any )=>{
       this.name = res.firstname;
       localStorage.setItem("name",this.name);
@@ -37,6 +37,7 @@ export class AdminPageComponent implements OnInit {
    
     
   }
+  //Remove supply schedule
   delete(id){
     this.ScheduleServices.deletedSchedule(id).subscribe((data : any)=>{
       this.ScheduleServices.getScheduleList();

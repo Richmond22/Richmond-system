@@ -70,7 +70,7 @@ export class PaymentComponent implements OnInit {
     }
   }
 
-  OnSubmit(form : NgForm){
+  OnSubmit(form : NgForm){//confirm payment
    
  this.pr = true;
     if(form.value.ID == 0)

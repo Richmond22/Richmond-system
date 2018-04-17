@@ -66,7 +66,7 @@ export class EftComponent implements OnInit {
     }
   }
 
-
+//confirm payment
   OnSubmit(form : NgForm){
    
     this.pr = true;
