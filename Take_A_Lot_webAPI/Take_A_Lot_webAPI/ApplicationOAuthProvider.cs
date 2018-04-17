@@ -40,12 +40,14 @@ namespace Take_A_Lot_webAPI
             }
             else if(admin != null){
                 var identity = new ClaimsIdentity(context.Options.AuthenticationType);
+                identity.AddClaim(new Claim("ID", admin.ID.ToString()));
                 identity.AddClaim(new Claim("firstname", admin.firstname));
                 context.Validated(identity);
             }
             else if (driver != null)
             {
                 var identity = new ClaimsIdentity(context.Options.AuthenticationType);
+                identity.AddClaim(new Claim("ID", driver.ID.ToString()));
                 identity.AddClaim(new Claim("firstname", driver.firstname));
                 context.Validated(identity);
             }

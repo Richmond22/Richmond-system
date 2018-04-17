@@ -34,6 +34,7 @@ namespace Take_A_Lot_webAPI.Controllers
             {
                 
                 firstname = identityClaims.FindFirst("firstname").Value,
+                ID = Convert.ToInt32( identityClaims.FindFirst("ID").Value),
 
 
             };

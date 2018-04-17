@@ -26,7 +26,7 @@ export class DriverPageComponent implements OnInit {
   ngOnInit() {
     this.updated = false;
     this.OrderService.getOrderList();
-    this.EmployeeServices.getadmin().subscribe((res : any )=>{
+    this.EmployeeServices.getdriver().subscribe((res : any )=>{
       this.name = res.firstname;
       this.id = res.ID;
       this.EmployeeServices.getDrivererbyid(this.id)
