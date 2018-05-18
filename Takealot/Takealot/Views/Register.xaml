@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Takealot.Views.Register"
+             Title="Register">
+    <ContentPage.Content>
+        
+         <StackLayout>
+            
+            <Entry x:Name="FirstName"
+                   TextColor="Black"
+                   FontSize="16"
+                   Placeholder="First Name"
+                   Margin="8"
+                   />
+
+            
+            <Entry x:Name="Surname"
+                   TextColor="Black"
+                   FontSize="16"
+                   Placeholder="Surname"
+                   Margin="8"
+                   />
+            
+            
+            <Entry x:Name="Email"
+                   TextColor="Black"
+                   FontSize="16"
+                   Placeholder="Email"
+                   Margin="8"/>
+
+            
+            <Entry x:Name="Password"
+                   TextColor="Black"
+                   IsPassword="True"
+                   FontSize="16"
+                   Placeholder="Password"
+                   Margin="8"/>
+
+           
+            <Entry x:Name="confrim"
+                   FontSize="16"
+                   TextColor="Black"
+                   IsPassword="True"
+                   Placeholder="Confirm Password"
+                   Margin="8"/>
+            <Label x:Name="errorM"
+                   FontSize="16"
+                   TextColor="Red"
+                   Margin="8"/>
+
+             <Label x:Name="successs"
+                   FontSize="16"
+                   TextColor="Green"
+                   Margin="8"/>
+            
+            <Button Text="Register" Clicked="Handle_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

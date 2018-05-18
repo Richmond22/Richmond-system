@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Takealot.Views.PeronalDetails">
+    <ContentPage.Content>
+         <StackLayout>
+            <Label Text="FirstName:*" Margin="5"/>
+            <Entry x:Name="name" Margin="5"/>
+
+            <Label Text="Surname:*" Margin="5"/>
+            <Entry x:Name="Sur" Margin="5" />
+
+            <Label Text="Email:*" Margin="5"/>
+            <Entry x:Name="mail"  Margin="5"/>
+
+            <Label  Text="Mobile:*"/>
+            <Entry x:Name="mobile" Margin="5"/>
+            
+
+
+            <Button Text="SAVE"/>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

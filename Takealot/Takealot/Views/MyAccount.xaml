@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Takealot.Views.MyAccount"
+             Title="My Account">
+    <ContentPage.Content>
+         <StackLayout>
+            <Label Text="ORDERS" Margin="10" BackgroundColor="LightGray" TextColor="SlateGray" FontSize="22"/>
+            <Button Text="Orders" Margin="10" BackgroundColor="White"/>
+            <Button Text="Invoices" Margin="10" BackgroundColor="White"/>
+            <Label Text="GENERAL" Margin="10" BackgroundColor="LightGray" TextColor="SlateGray" FontSize="22"/>
+            <Button Text="Personal Details" Margin="10" BackgroundColor="White" Clicked="Handle_Clicked"/>
+            <Button Text="Address Book" Margin="10" BackgroundColor="White"/>
+          
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

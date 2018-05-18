@@ -1,0 +1,11 @@
+/Users/reversidesoftwaresolutions/Documents/Takealot/Takealot/bin/Debug/netstandard2.0/Takealot.deps.json
+/Users/reversidesoftwaresolutions/Documents/Takealot/Takealot/bin/Debug/netstandard2.0/Takealot.dll
+/Users/reversidesoftwaresolutions/Documents/Takealot/Takealot/bin/Debug/netstandard2.0/Takealot.pdb
+/Users/reversidesoftwaresolutions/Documents/Takealot/Takealot/obj/Debug/netstandard2.0/Takealot.csprojResolveAssemblyReference.cache
+/Users/reversidesoftwaresolutions/Documents/Takealot/Takealot/obj/Debug/netstandard2.0/Takealot.csproj.CoreCompileInputs.cache
+/Users/reversidesoftwaresolutions/Documents/Takealot/Takealot/obj/Debug/netstandard2.0/Takealot.AssemblyInfoInputs.cache
+/Users/reversidesoftwaresolutions/Documents/Takealot/Takealot/obj/Debug/netstandard2.0/Takealot.AssemblyInfo.cs
+/Users/reversidesoftwaresolutions/Documents/Takealot/Takealot/obj/Debug/netstandard2.0/Takealot.dll
+/Users/reversidesoftwaresolutions/Documents/Takealot/Takealot/obj/Debug/netstandard2.0/Takealot.pdb
+/Users/reversidesoftwaresolutions/Documents/Takealot/Takealot/bin/Debug/netstandard2.0/Mono.Android.dll
+/Users/reversidesoftwaresolutions/Documents/Takealot/Takealot/bin/Debug/netstandard2.0/Mono.Android.pdb
