@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Takealot.ViewModel;
 using Xamarin.Forms;
 
 namespace Takealot
@@ -12,8 +13,7 @@ namespace Takealot
 		
         public MainPage()
         {
-            InitializeComponent();
-            
+			InitializeComponent();
 			masterPage.ListView.ItemSelected += OnItemelected;
         }
         

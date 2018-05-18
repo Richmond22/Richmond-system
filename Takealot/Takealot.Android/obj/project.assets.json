@@ -1153,11 +1153,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/reversidesoftwaresolutions/Documents/Takealot/Takealot.Android/Takealot.Android.csproj",
+      "projectUniqueName": "/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/Takealot.Android.csproj",
       "projectName": "Takealot.Android",
-      "projectPath": "/Users/reversidesoftwaresolutions/Documents/Takealot/Takealot.Android/Takealot.Android.csproj",
+      "projectPath": "/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/Takealot.Android.csproj",
       "packagesPath": "/Users/reversidesoftwaresolutions/.nuget/packages/",
-      "outputPath": "/Users/reversidesoftwaresolutions/Documents/Takealot/Takealot.Android/obj",
+      "outputPath": "/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/reversidesoftwaresolutions/.config/NuGet/NuGet.Config"
@@ -1171,8 +1171,8 @@
       "frameworks": {
         "monoandroid81": {
           "projectReferences": {
-            "/Users/reversidesoftwaresolutions/Documents/Takealot/Takealot/Takealot.csproj": {
-              "projectPath": "/Users/reversidesoftwaresolutions/Documents/Takealot/Takealot/Takealot.csproj"
+            "/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot/Takealot.csproj": {
+              "projectPath": "/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot/Takealot.csproj"
             }
           }
         }

@@ -34,17 +34,7 @@ namespace Takealot.Helpers
             }
         }
 
-		public static string Token
-        {
-            get
-            {
-                return AppSettings.GetValueOrDefault("Token", "");
-            }
-            set
-            {
-                AppSettings.AddOrUpdateValue("Token", value);
-            }
-        }
+
 
     }
 }

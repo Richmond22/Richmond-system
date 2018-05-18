@@ -1323,11 +1323,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/reversidesoftwaresolutions/Documents/Takealot/Takealot.iOS/Takealot.iOS.csproj",
+      "projectUniqueName": "/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.iOS/Takealot.iOS.csproj",
       "projectName": "Takealot.iOS",
-      "projectPath": "/Users/reversidesoftwaresolutions/Documents/Takealot/Takealot.iOS/Takealot.iOS.csproj",
+      "projectPath": "/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.iOS/Takealot.iOS.csproj",
       "packagesPath": "/Users/reversidesoftwaresolutions/.nuget/packages/",
-      "outputPath": "/Users/reversidesoftwaresolutions/Documents/Takealot/Takealot.iOS/obj",
+      "outputPath": "/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.iOS/obj",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/reversidesoftwaresolutions/.config/NuGet/NuGet.Config"
@@ -1341,8 +1341,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "/Users/reversidesoftwaresolutions/Documents/Takealot/Takealot/Takealot.csproj": {
-              "projectPath": "/Users/reversidesoftwaresolutions/Documents/Takealot/Takealot/Takealot.csproj"
+            "/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot/Takealot.csproj": {
+              "projectPath": "/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot/Takealot.csproj"
             }
           }
         }
