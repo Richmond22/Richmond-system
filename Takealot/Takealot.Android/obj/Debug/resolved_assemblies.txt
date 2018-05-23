@@ -6,6 +6,9 @@
 /Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/android/assets/Newtonsoft.Json.dll
 /Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/android/assets/Plugin.Settings.Abstractions.dll
 /Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/android/assets/Plugin.Settings.dll
+/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/android/assets/Rg.Plugins.Popup.dll
+/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/android/assets/Rg.Plugins.Popup.Droid.dll
+/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/android/assets/Rg.Plugins.Popup.Platform.dll
 /Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/android/assets/System.Core.dll
 /Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/android/assets/System.dll
 /Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/android/assets/System.Net.Http.dll
@@ -54,6 +57,7 @@
 /Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/android/assets/System.Reflection.Extensions.dll
 /Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/android/assets/System.Runtime.Serialization.dll
 /Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/android/assets/System.ServiceModel.Internals.dll
+/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/android/assets/System.Threading.Tasks.dll
 /Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/android/assets/Mono.Security.dll
 /Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/android/assets/System.Net.Primitives.dll
 /Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/android/assets/netstandard.dll

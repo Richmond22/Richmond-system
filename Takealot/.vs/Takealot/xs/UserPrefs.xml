@@ -1,11 +1,17 @@
-﻿<Properties StartupConfiguration="{3384A077-F224-43FA-A745-27DAFEE54396}|Default">
-  <MonoDevelop.Ide.ItemProperties.Takealot.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.762F5398-7D0A-42D6-A24B-97CC1778DDE2" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Takealot/Services/LoginServices.cs">
+﻿<Properties StartupConfiguration="{37B0888D-FF16-44D5-BF2C-4EA604DA8397}|Default">
+  <MonoDevelop.Ide.ItemProperties.Takealot.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D554E700-69AA-49D4-A4D1-8815A9CDFD93" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Takealot/HomePage.xaml">
     <Files>
-      <File FileName="Takealot/Services/LoginServices.cs" Line="9" Column="1" />
+      <File FileName="Takealot/Services/ProductServices.cs" Line="86" Column="64" />
+      <File FileName="Takealot/Views/Cart.xaml" Line="35" Column="46" />
+      <File FileName="Takealot/Views/Cart.xaml.cs" Line="96" Column="36" />
+      <File FileName="Takealot/ViewModel/ProductView.cs" Line="13" Column="27" />
+      <File FileName="Takealot/HomePage.xaml.cs" Line="52" Column="47" />
+      <File FileName="Takealot/Model/Products.cs" Line="12" Column="17" />
+      <File FileName="Takealot/HomePage.xaml" Line="16" Column="56" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Takealot.Android PreferredExecutionTarget="Android.3208206374625115" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
+  <MonoDevelop.Ide.ItemProperties.Takealot.Android PreferredExecutionTarget="Android.Android_Accelerated_Nougat" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

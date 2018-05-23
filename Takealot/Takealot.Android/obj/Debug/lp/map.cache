@@ -1,4 +1,9 @@
 FormsViewGroup
+Newtonsoft.Json
+Plugin.Settings.Abstractions
+Plugin.Settings
+System.Net.Http.Extensions
+System.Net.Http.Primitives
 System.Runtime
 Takealot
 Xamarin.Android.Arch.Core.Common
@@ -25,8 +30,7 @@ Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
 netstandard
-Newtonsoft.Json
-System.Net.Http.Extensions
-System.Net.Http.Primitives
-Plugin.Settings.Abstractions
-Plugin.Settings
+Rg.Plugins.Popup
+Rg.Plugins.Popup.Droid
+Rg.Plugins.Popup.Platform
+System.Reflection.Extensions

@@ -4,16 +4,34 @@
              x:Class="Takealot.HomePage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="prolist">
+            
+            <ListView HasUnevenRows="true" x:Name="prolist" ItemSelected="Handle_ItemSelected">
                 <ListView.ItemTemplate>
+                  
                     <DataTemplate>
-                        <ImageCell DetailColor="Blue" ImageSource="{Binding ProductImage}" Detail="{Binding Prodetils}"/>
+                        <ViewCell>
+                            <StackLayout>
+                                <Image HeightRequest="50"
+                                       WidthRequest="50"
+                                       Source="{Binding ProductImage}"/>
+                                <Label HorizontalOptions="Center"
+                                       VerticalOptions="Center" 
+                                       FontSize="12"
+                                       Text="{Binding Proname}"/>
+                                <Label Font="14" 
+                                       Text="{Binding Proprice}"
+                                       VerticalOptions="End"
+                                       HorizontalOptions="Center"
+                                       TextColor="Blue"/>
+                            </StackLayout>
+                        </ViewCell>
+
                     </DataTemplate>
                 </ListView.ItemTemplate>
                 
             </ListView>
                 
-            
+            <ActivityIndicator Color="Red" x:Name="LoadInd"  IsRunning="true"  />
                 
         </StackLayout>
     </ContentPage.Content>

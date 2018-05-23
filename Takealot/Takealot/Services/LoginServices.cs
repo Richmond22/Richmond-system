@@ -32,6 +32,8 @@ namespace Takealot.Services
             if (response.IsSuccessStatusCode)
             {
 				TempStorage.Username = email;
+				UserModel cust = (UserModel)getCustomerClaims();
+				TempStorage.CustomerID = cust.customerID.ToString();
                 return true;
             }
             else

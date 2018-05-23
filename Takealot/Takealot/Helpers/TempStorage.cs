@@ -34,6 +34,18 @@ namespace Takealot.Helpers
             }
         }
 
+		public static string CustomerID
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault("CustomerID", "");
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue("CustomerID", value);
+            }
+        }
+
 
 
     }

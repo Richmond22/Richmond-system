@@ -4,5 +4,98 @@
              x:Class="Takealot.Views.Cart"
              Title="Cart">
     <ContentPage.Content>
+       
+         <StackLayout>
+
+            <StackLayout HorizontalOptions="End">
+            <Label Text="CART SUMMARY" 
+               TextColor="Green" 
+               FontSize="Large"
+               />
+            
+            <Label x:Name="TQ"
+                   HorizontalOptions="End"/>
+            <Label x:Name="TP"
+                   HorizontalOptions="End"/>
+        </StackLayout>
+            
+            <ListView HasUnevenRows="true" x:Name="cartList" ItemSelected="Handle_ItemSelected" >
+                <ListView.ItemTemplate>
+                  
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Image Source="{Binding picture}"
+                                       HeightRequest="50"
+                                       WidthRequest="50"
+                                       />
+                                <Label Text="{Binding model}"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center" 
+                                       FontSize="12"/>
+                                <Label Text="{Binding quantity}"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center" 
+                                       FontSize="12"/>
+                                <Label Text="{Binding price}"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center" 
+                                       TextColor="Blue"
+                                       FontSize="12"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+           <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1"
+                  VerticalOptions="End"
+                  BackgroundColor="LightGray">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0"
+                        Margin="10"
+                        Text="Remove"
+                        BorderColor="Red"
+                        BorderWidth="2"
+                        TextColor="Red"
+                        Clicked="Delete"
+                        />
+                <Button Grid.Column="1"
+                        Margin="10"
+                        Font="Bold"
+                        BorderColor="Blue"
+                        TextColor="Blue"
+                        BorderWidth="2"
+                        FontSize="20"
+                        Text="-"
+                        Clicked="Subtract"
+                        WidthRequest="30"/>
+                <Button Grid.Column="2"
+                        Margin="10"
+                        BorderColor="Blue"
+                        BorderWidth="2"
+                        TextColor="Blue"
+                        FontSize="20"
+                        Font="Bold"
+                        Text="+" 
+                        Clicked="Add"
+                        WidthRequest="30"/>
+            </Grid>
+        </Grid>
+            <Button Text="CHECKOUT"
+                    BackgroundColor="Green"
+                    FontSize="18"/>
+        </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>
+
+
