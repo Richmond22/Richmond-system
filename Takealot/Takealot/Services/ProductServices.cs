@@ -13,7 +13,7 @@ namespace Takealot.Services
     public class ProductServices
     {
 		HttpClient client = new HttpClient();
-		public string url = "http://www.takealotweb.somee.com/api/";
+		public string url = "http://www.takealotapi.somee.com/api/";
 		public async Task<List<Products>> getProducts() 
         {
    
@@ -75,7 +75,7 @@ namespace Takealot.Services
             
        }
 
-		public async Task<string> PutCart(CartModel cart)
+		public async Task<bool> PutCart(CartModel cart)
         {
 
             client.DefaultRequestHeaders.ExpectContinue = false;
@@ -84,7 +84,7 @@ namespace Takealot.Services
             httpcontent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
             var results = await client.PutAsync(url + "Tblcart/"+cart.cartID, httpcontent);
-            return results.StatusCode.ToString();
+            return results.IsSuccessStatusCode;
 
 
 

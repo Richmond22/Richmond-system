@@ -19,7 +19,7 @@
                    HorizontalOptions="End"/>
         </StackLayout>
             
-            <ListView HasUnevenRows="true" x:Name="cartList" ItemSelected="Handle_ItemSelected" >
+            <ListView SeparatorVisibility="None" HasUnevenRows="true" x:Name="cartList" ItemSelected="Handle_ItemSelected" >
                 <ListView.ItemTemplate>
                   
                     <DataTemplate>
@@ -92,7 +92,8 @@
         </Grid>
             <Button Text="CHECKOUT"
                     BackgroundColor="Green"
-                    FontSize="18"/>
+                    FontSize="18"
+                    Clicked="Handle_Clicked"/>
         </StackLayout>
 
     </ContentPage.Content>

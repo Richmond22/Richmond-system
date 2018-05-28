@@ -14,21 +14,37 @@ namespace Takealot.Services
 			
         }
         
-		string url = "http://www.takealotweb.somee.com/api/Tblcustomer";
+		string url = "http://www.takealotapi.somee.com/api/Tblcustomer";
 
-
+		public HttpClient httpclient = new HttpClient();
 
 
 
         public async Task<bool> PostCustomer(UserModel user)
         {
-            var httpclient = new HttpClient();
+           
             httpclient.DefaultRequestHeaders.ExpectContinue = false;
             var _json = JsonConvert.SerializeObject(user);
             HttpContent httpcontent = new StringContent(_json);
             httpcontent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
             var results = await httpclient.PostAsync(url, httpcontent);
+            return results.IsSuccessStatusCode;
+
+
+
+        }
+        
+
+		public async Task<bool> PutCustomer(UserModel cust)
+        {
+
+			httpclient.DefaultRequestHeaders.ExpectContinue = false;
+            var _json = JsonConvert.SerializeObject(cust);
+            HttpContent httpcontent = new StringContent(_json);
+            httpcontent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+			var results = await httpclient.PutAsync(url + "?id=" + cust.customerID, httpcontent);
             return results.IsSuccessStatusCode;
 
 

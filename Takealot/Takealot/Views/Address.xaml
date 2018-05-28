@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Takealot.Views.Address">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="ADID" IsVisible="false" />
+            <Label Text="Address Details"
+                   FontSize="22"
+                   HorizontalOptions="Center"/>
+            <Entry Placeholder="Recipient Name"
+                   Margin="5"
+                   x:Name="Custname"/>
+            <Entry Placeholder="Delivery Contact number"
+                   Margin="5"
+                   x:Name="contact"/>
+            <Entry Placeholder="Address Line 1"
+                   Margin="5"
+                   x:Name="line1"/>
+            <Entry Placeholder="Address Line 1"
+                   Margin="5"
+                   x:Name="line2"/>
+            <Entry Placeholder="Surburb"
+                   Margin="5"
+                   x:Name="surb"/>
+            <StackLayout Orientation="Horizontal">
+                 <Entry Placeholder="City"
+                   Margin="5"
+                   x:Name="city"
+                        WidthRequest="240"/>
+            <Entry Placeholder="Code"
+                   Margin="5"
+                   x:Name="code"
+                   WidthRequest="80"/>
+            
+           
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Save"
+                        Clicked="Save"/>
+                <Button Text="Cancel"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

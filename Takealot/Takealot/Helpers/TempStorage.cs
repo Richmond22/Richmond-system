@@ -46,6 +46,41 @@ namespace Takealot.Helpers
             }
         }
 
+		public static string PaymentID
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault("PaymentID", "");
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue("PaymentID", value);
+            }
+        }
+		public static string TotalP
+        {
+            get
+            {
+				return AppSettings.GetValueOrDefault("TotalP", "");
+            }
+            set
+            {
+				AppSettings.AddOrUpdateValue("TotalP", value);
+            }
+        }
+
+		public static bool logged
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault("logged", false);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue("logged", value);
+            }
+        }
+
 
 
     }

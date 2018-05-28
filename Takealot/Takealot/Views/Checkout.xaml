@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Takealot.Views.Checkout">
+    <ContentPage.Content>
+       
+        
+        <StackLayout>
+            <StackLayout BackgroundColor="Aqua" Margin="15">
+             <Label TextColor="Navy" Text=" Order summary" FontSize="20"/>
+            <Label TextColor="Navy" x:Name="orderNumber"/>
+            <Label TextColor="Navy" x:Name="cDate"/>
+            <Label TextColor="Navy" x:Name="dDate" />
+            <Label TextColor="Navy" x:Name="cost"/>
+
+        </StackLayout>
+            <Label HorizontalOptions="Center" TextColor="Teal" Text="Order Items" FontSize="18"/>
+            <ListView BackgroundColor="Gray" HasUnevenRows="true" x:Name="orderList"  >
+                <ListView.ItemTemplate>
+                  
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                
+                                <Label Text="{Binding model}"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center" 
+                                       FontSize="12"/>
+                                <Label Text="{Binding quantity}"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center" 
+                                       FontSize="12"/>
+                                <Label Text="{Binding price}"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center" 
+                                       TextColor="Blue"
+                                       FontSize="12"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Margin="10" BackgroundColor="Gray" Text="Checkout" Clicked="Handle_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

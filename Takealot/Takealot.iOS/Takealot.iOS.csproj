@@ -158,4 +158,7 @@
       <Name>Takealot</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\errow.png" />
+  </ItemGroup>
 </Project>

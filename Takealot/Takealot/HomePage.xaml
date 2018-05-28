@@ -4,8 +4,10 @@
              x:Class="Takealot.HomePage">
     <ContentPage.Content>
         <StackLayout>
-            
-            <ListView HasUnevenRows="true" x:Name="prolist" ItemSelected="Handle_ItemSelected">
+            <Image Source="https://i2.wp.com/techmoran.com/wp-content/uploads/2014/07/takealot.jpg"
+                    HorizontalOptions="FillAndExpand"
+                   HeightRequest="80"/>
+            <ListView SeparatorVisibility="None" HasUnevenRows="true" x:Name="prolist" ItemSelected="Handle_ItemSelected">
                 <ListView.ItemTemplate>
                   
                     <DataTemplate>

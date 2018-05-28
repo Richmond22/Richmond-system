@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{DAC42D9A-A342-4C99-BB6A-A290516AA8BD}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7/build/net45/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props">
+    <Files>
+      <File FileName="packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7/build/net45/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Line="20" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Take__A__Lot__webAPI PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>

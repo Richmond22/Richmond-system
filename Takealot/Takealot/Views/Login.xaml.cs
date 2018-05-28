@@ -19,7 +19,8 @@ namespace Takealot.Views
 			bool logged = loginService.userAuthentication(email.Text, Password.Text);
 			if (logged)
 			{
-				loggedin.Text = "success";
+				TempStorage.logged = true;
+				Application.Current.MainPage = new MainPage();
 
 			}
 			else

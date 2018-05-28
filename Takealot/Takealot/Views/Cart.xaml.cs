@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Takealot.Helpers;
 using Takealot.Model;
 using Takealot.Services;
 using Takealot.ViewModel;
@@ -18,6 +19,11 @@ namespace Takealot.Views
         public Cart()
         {
             InitializeComponent();
+            if(!TempStorage.logged)
+			{
+				
+				Navigation.PushAsync(new Login());
+			}
 
         }
 		protected override void OnAppearing()
@@ -29,7 +35,7 @@ namespace Takealot.Views
             {
 				TotalQ += cr.quantity;
 				TotalP += (cr.quantity * cr.price);
-                viewwC.Add(new CartView
+				viewwC.Add(new CartView
                 {
                     cartID = cr.cartID,
                     productID = cr.productID,
@@ -42,6 +48,7 @@ namespace Takealot.Views
 			}
 			TP.Text = "Total Price : R" + TotalP.ToString();
 			TQ.Text = "Total Items : " + TotalQ.ToString();
+			TempStorage.TotalP = TotalP.ToString();
             cartList.ItemsSource = viewwC;
 
 		}
@@ -74,7 +81,7 @@ namespace Takealot.Views
 		{
 			if(selected != null){
 				string succ =  productServices.DeleteCartAsync(selected.cartID.ToString());
-
+				TotalP = 0; TotalQ = 0;
 				OnAppearing();
 
 			}else
@@ -89,6 +96,7 @@ namespace Takealot.Views
 			{
 				selected.quantity += 1;
 				var res = await productServices.PutCart(selected);
+				TotalP = 0;TotalQ = 0;
 				OnAppearing();
 			}
 
@@ -101,8 +109,18 @@ namespace Takealot.Views
             {
                 selected.quantity -= 1;
                 var res = await productServices.PutCart(selected);
+				TotalP = 0; TotalQ = 0;
                 OnAppearing();
             }
+		}
+
+		void Handle_Clicked(object sender, System.EventArgs e)
+		{
+			if(TotalQ > 0)
+			{
+				Navigation.PushAsync(new Shipping());
+			}
+
 		}
     }
 }

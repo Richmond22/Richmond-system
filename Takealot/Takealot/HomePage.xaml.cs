@@ -7,6 +7,7 @@ using Takealot.Helpers;
 using Takealot.Model;
 using Takealot.Services;
 using Takealot.ViewModel;
+using Takealot.Views;
 using Xamarin.Forms;
 
 namespace Takealot
@@ -57,13 +58,20 @@ namespace Takealot
 		{
 			ProductView selectedProduct =  (ProductView)e.SelectedItem;
 			CartModel cart = new CartModel { customerID = Convert.ToInt32(TempStorage.CustomerID), productID = selectedProduct.productID, quantity = 1 };
-		  var respone = await DisplayAlert("Add to Cart", selectedProduct.productID.ToString(), "ADD", "Cancel");
-           if(respone) 
+		  var respone = await DisplayAlert("Cart","Add selected product to cart ?", "ADD", "Cancel");
+            if(TempStorage.logged)
 			{
-				var message = await productServices.PostCart(cart);
-                if(message)
-			         await	DisplayAlert("added", TempStorage.CustomerID, "ok");
+				if (respone)
+                {
+                    var message = await productServices.PostCart(cart);
+                    if (message)
+                        await DisplayAlert("added", "Product successfully added to cart", "ok");
+                }
+				
+			}else{
+				await Navigation.PushAsync(new Login());
 			}
+           
 		}  
 
 

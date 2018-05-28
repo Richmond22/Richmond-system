@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Takealot.Views.PeronalDetails">
     <ContentPage.Content>
-         <StackLayout>
+         <StackLayout BackgroundColor="Silver">
             <Label Text="FirstName:*" Margin="5"/>
             <Entry x:Name="name" Margin="5"/>
 
@@ -16,7 +16,7 @@
             
 
 
-            <Button Text="SAVE"/>
+            <Button Margin="15" Clicked="Handle_Clicked" BackgroundColor="Navy" Text="SAVE"/>
             </StackLayout>
     </ContentPage.Content>
 </ContentPage>

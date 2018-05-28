@@ -6,11 +6,11 @@
     <ContentPage.Content>
          <StackLayout>
             <Label Text="ORDERS" Margin="10" BackgroundColor="LightGray" TextColor="SlateGray" FontSize="22"/>
-            <Button Text="Orders" Margin="10" BackgroundColor="White"/>
-            <Button Text="Invoices" Margin="10" BackgroundColor="White"/>
+            <Button Text="Orders" Clicked="Handle_Clicked_2" Margin="10" BackgroundColor="White"/>
+            <Button Text="Invoices" Clicked="Handle_Clicked_3" Margin="10" BackgroundColor="White"/>
             <Label Text="GENERAL" Margin="10" BackgroundColor="LightGray" TextColor="SlateGray" FontSize="22"/>
             <Button Text="Personal Details" Margin="10" BackgroundColor="White" Clicked="Handle_Clicked"/>
-            <Button Text="Address Book" Margin="10" BackgroundColor="White"/>
+            <Button Text="Address Book" Clicked="Handle_Clicked_1" Margin="10" BackgroundColor="White"/>
           
         </StackLayout>
     </ContentPage.Content>

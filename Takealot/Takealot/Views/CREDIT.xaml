@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Takealot.Views.CREDIT">
+    <ContentPage.Content>
+         <StackLayout>
+            <Entry x:Name="CreditID" IsVisible="false" />
+            <Label Text="Bank Details"
+                   TextColor="Teal"
+                   FontSize="22"
+                   HorizontalOptions="Center"/>
+            <Label Text="Name on card*" FontSize="8"
+                   Margin="5"
+                   TextColor="Blue"/>
+            <Entry Placeholder="Name on card"
+                   Margin="5"
+                   FontSize="14"
+                   x:Name="nameOnC"/>
+            <Label Text="Card Description*" FontSize="8"
+                   Margin="5"
+                   TextColor="Blue"/>
+            <Entry Placeholder="Card Description"
+                   Margin="5"
+                   FontSize="14"
+                   x:Name="CDescription"/>
+            <Label Text="Card number*" FontSize="8"
+                   Margin="5"
+                   TextColor="Blue"/>
+            <Entry Placeholder="Card Number"
+                   Margin="5"
+                   FontSize="14"
+                   x:Name="cardNum"/>
+            <Label Text="Exp. Date*" FontSize="8"
+                   Margin="5"
+                   TextColor="Blue"/>
+            <Entry Placeholder="Exp. Date"
+                   Margin="5"
+                   FontSize="14"
+                   x:Name="expDate1"/>
+            <Label Text="Type*" FontSize="8"
+                   Margin="5"
+                   TextColor="Blue"/>
+            <Entry Placeholder="Type"
+                   Margin="5"
+                   FontSize="14"
+                   x:Name="ccType"/>
+            <Label Text="Cvv*" FontSize="8"
+                   Margin="5"
+                   TextColor="Blue"/>
+            <Entry Placeholder="Cvv"
+                   Margin="5"
+                   FontSize="14"
+                   x:Name="CvvNa"/>
+            
+            
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Secure Payment"
+                        Clicked="Handle_Clicked"/>
+                <Button Text="Checkout"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

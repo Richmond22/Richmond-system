@@ -4,7 +4,7 @@
              x:Class="Takealot.Views.Login"
              Title="Login">
     <ContentPage.Content>
-    <StackLayout >
+    <StackLayout BackgroundColor="Silver" >
 
             <Entry x:Name="email"
                   IsPassword="False"
@@ -20,7 +20,7 @@
                    Placeholder="Password"
                    Margin="12"/>
             <Label Margin="10" x:Name="loggedin" TextColor="Red" FontSize="15"></Label>
-            <Button Text="Login" Clicked="Handle_Clicked" />
+            <Button Margin="15" BackgroundColor="Navy" Text="Login" Clicked="Handle_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -5,7 +5,7 @@
              Title="Register">
     <ContentPage.Content>
         
-         <StackLayout>
+         <StackLayout BackgroundColor="Silver">
             
             <Entry x:Name="FirstName"
                    TextColor="Black"
@@ -54,7 +54,7 @@
                    TextColor="Green"
                    Margin="8"/>
             
-            <Button Text="Register" Clicked="Handle_Clicked" />
+            <Button Margin="15" Text="Register" BackgroundColor="Navy" Clicked="Handle_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
