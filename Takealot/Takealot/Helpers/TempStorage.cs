@@ -68,6 +68,17 @@ namespace Takealot.Helpers
 				AppSettings.AddOrUpdateValue("TotalP", value);
             }
         }
+		public static string products
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault("products", "");
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue("products", value);
+            }
+        }
 
 		public static bool logged
         {

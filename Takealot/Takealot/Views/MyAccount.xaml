@@ -4,13 +4,12 @@
              x:Class="Takealot.Views.MyAccount"
              Title="My Account">
     <ContentPage.Content>
-         <StackLayout>
-            <Label Text="ORDERS" Margin="10" BackgroundColor="LightGray" TextColor="SlateGray" FontSize="22"/>
-            <Button Text="Orders" Clicked="Handle_Clicked_2" Margin="10" BackgroundColor="White"/>
-            <Button Text="Invoices" Clicked="Handle_Clicked_3" Margin="10" BackgroundColor="White"/>
-            <Label Text="GENERAL" Margin="10" BackgroundColor="LightGray" TextColor="SlateGray" FontSize="22"/>
-            <Button Text="Personal Details" Margin="10" BackgroundColor="White" Clicked="Handle_Clicked"/>
-            <Button Text="Address Book" Clicked="Handle_Clicked_1" Margin="10" BackgroundColor="White"/>
+         <StackLayout BackgroundColor="#a5d6a7">
+            <Label Text="ORDERS" Margin="10" BackgroundColor="#4caf50" TextColor="SlateGray" FontSize="22"/>
+            <Button Text="Orders" Clicked="Handle_Clicked_2" Margin="10" BackgroundColor="#90a4ae"/>
+            <Label Text="GENERAL" Margin="10" BackgroundColor="#4caf50" TextColor="SlateGray" FontSize="22"/>
+            <Button Text="Personal Details" Margin="10" BackgroundColor="#90a4ae" Clicked="Handle_Clicked"/>
+            <Button Text="Address Book" Clicked="Handle_Clicked_1" Margin="10" BackgroundColor="#90a4ae"/>
           
         </StackLayout>
     </ContentPage.Content>

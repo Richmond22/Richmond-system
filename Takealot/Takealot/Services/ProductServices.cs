@@ -13,24 +13,33 @@ namespace Takealot.Services
     public class ProductServices
     {
 		HttpClient client = new HttpClient();
-		public string url = "http://www.takealotapi.somee.com/api/";
+		public string url = "http://www.takealotsite.somee.com/api/";
 		public async Task<List<Products>> getProducts() 
         {
-   
-			var response = await client.GetAsync(url+"Tblproduct");
+            if(TempStorage.products == "")
+			{
+				var response = await client.GetAsync(url+"Tblproduct");
             
             
             if (response.IsSuccessStatusCode)
-            {
-                var result = await response.Content.ReadAsStringAsync();
-				var productList   = JsonConvert.DeserializeObject<List<Products>>(result);
+            { 
+					TempStorage.products = await response.Content.ReadAsStringAsync();
+					var productList   = JsonConvert.DeserializeObject<List<Products>>(TempStorage.products);
 
-				return productList;
+                return productList;
             }
             else
             {
                 return null;
             }         
+			}
+            else
+			{
+				var productList = JsonConvert.DeserializeObject<List<Products>>(TempStorage.products);
+
+                return productList;
+			}
+
         }
         
 

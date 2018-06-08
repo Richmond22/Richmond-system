@@ -1,12 +1,11 @@
 ﻿<Properties StartupConfiguration="{3384A077-F224-43FA-A745-27DAFEE54396}|Default">
   <MonoDevelop.Ide.ItemProperties.Takealot.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D554E700-69AA-49D4-A4D1-8815A9CDFD93" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Takealot/Views/Cart.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Takealot/Helpers/TempStorage.cs">
     <Files>
-      <File FileName="Takealot/Views/PeronalDetails.xaml.cs" Line="42" Column="4" />
-      <File FileName="Takealot/Services/RegisterServices.cs" Line="47" Column="55" />
-      <File FileName="Takealot/Model/UserModel.cs" Line="1" Column="1" />
-      <File FileName="Takealot/MasterPage.xaml.cs" Line="57" Column="35" />
-      <File FileName="Takealot/Views/Cart.xaml.cs" Line="119" Column="4" />
+      <File FileName="Takealot/Views/Cart.xaml" Line="16" Column="13" />
+      <File FileName="Takealot/Views/Cart.xaml.cs" Line="35" Column="54" />
+      <File FileName="Takealot/Services/ProductServices.cs" Line="1" Column="1" />
+      <File FileName="Takealot/Helpers/TempStorage.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Takealot.Android PreferredExecutionTarget="Android.3208206374625115" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />

@@ -15,20 +15,28 @@ namespace Takealot.Views
         {
             InitializeComponent();
         }
-		protected override void OnAppearing()
+		protected async override void OnAppearing()
 		{
 			base.OnAppearing();
-			AddressModel address = (AddressModel)addressService.GetAddress();
-			if(address != null){
-				isNew = false;
-				ADID.Text = address.addressID.ToString();
-                 Custname.Text = address.contactPerson;
-				contact.Text = address.phone;
-				line1.Text = address.address1;
-				line2.Text = address.address2;
-				surb.Text = address.suburb;
-				city.Text = address.city;
-				code.Text = address.zip;
+			if (TempStorage.logged)
+			{
+				AddressModel address = (AddressModel)addressService.GetAddress();
+				if (address != null)
+				{
+					isNew = false;
+					ADID.Text = address.addressID.ToString();
+					Custname.Text = address.contactPerson;
+					contact.Text = address.phone;
+					line1.Text = address.address1;
+					line2.Text = address.address2;
+					surb.Text = address.suburb;
+					city.Text = address.city;
+					code.Text = address.zip;
+				}
+			}
+			else
+			{
+			  await	Navigation.PushAsync(new Login());
 			}
 		}
 		async void Save(object sender, System.EventArgs e)
@@ -75,7 +83,8 @@ namespace Takealot.Views
 				bool res2 = await addressService.PutAddress(address);
 				if (res2)
 				{
-					await DisplayAlert("Address", "Address successfully Updated", "Ok");
+				  
+			    	await Navigation.PushAsync(new Payment());
 				}
 				else
 				{

@@ -14,7 +14,7 @@ namespace Takealot.Services
 		public HttpClient httpclient = new HttpClient();
 		public async Task<bool> PostOrder(OrderModel order)
         {
-            string url = "http://www.takealotapi.somee.com/api/Tblorder";
+			string url = "http://www.takealotsite.somee.com/api/Tblorder";
             
             httpclient.DefaultRequestHeaders.ExpectContinue = false;
             var _json = JsonConvert.SerializeObject(order);
@@ -28,7 +28,7 @@ namespace Takealot.Services
         
 		public async Task<bool> PostOrderItem(OrderItems item)
         {
-			string url = "http://www.takealotapi.somee.com/api/OrderItem";
+			string url = "http://www.takealotsite.somee.com/api/OrderItem";
 
             httpclient.DefaultRequestHeaders.ExpectContinue = false;
             var _json = JsonConvert.SerializeObject(item);
@@ -43,7 +43,7 @@ namespace Takealot.Services
 		public object GetOrder()
         {
 
-            string url = "http://www.takealotapi.somee.com/api/Tblorder/" + TempStorage.CustomerID;
+			string url = "http://www.takealotsite.somee.com/api/Tblorder/" + TempStorage.CustomerID;
 			var response = httpclient.GetAsync(url).Result;
 
 
@@ -61,7 +61,7 @@ namespace Takealot.Services
 
 		public async Task<List<OrderModel>> getOrders()
         {
-			string url = "http://www.takealotapi.somee.com/api/GetTblorderbyid?id=" + TempStorage.CustomerID;
+			string url = "http://www.takealotsite.somee.com/api/GetTblorderbyid?id=" + TempStorage.CustomerID;
 			var response = await httpclient.GetAsync(url);
 
             

@@ -161,4 +161,18 @@
   <ItemGroup>
     <AndroidResource Include="Resources\errow.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home.png" />
+    <BundleResource Include="Resources\cart.png" />
+    <BundleResource Include="Resources\account.png" />
+    <BundleResource Include="Resources\order.png" />
+    <BundleResource Include="Resources\register.png" />
+    <BundleResource Include="Resources\log.png" />
+    <BundleResource Include="Resources\add.png" />
+    <BundleResource Include="Resources\subtr.png" />
+    <BundleResource Include="Resources\delete.png" />
+    <BundleResource Include="Resources\logout.ico" />
+    <BundleResource Include="Resources\logout.png" />
+    <BundleResource Include="Resources\logout1.png" />
+  </ItemGroup>
 </Project>

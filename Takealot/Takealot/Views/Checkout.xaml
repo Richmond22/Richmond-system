@@ -1,44 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Takealot.Views.Checkout">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Takealot.Views.Checkout"
+             Title="Checkout">
     <ContentPage.Content>
        
         
-        <StackLayout>
-            <StackLayout BackgroundColor="Aqua" Margin="15">
-             <Label TextColor="Navy" Text=" Order summary" FontSize="20"/>
-            <Label TextColor="Navy" x:Name="orderNumber"/>
-            <Label TextColor="Navy" x:Name="cDate"/>
-            <Label TextColor="Navy" x:Name="dDate" />
-            <Label TextColor="Navy" x:Name="cost"/>
+        <StackLayout BackgroundColor="#80deea">
+            <Frame Margin="15" BackgroundColor="#b2ebf2">
+                <StackLayout HorizontalOptions="FillAndExpand"  >
+            <Label  TextColor="#424242" FontAttributes="Bold" HorizontalOptions="Center" Text=" ORDER SUMMARY" FontSize="20"/>
+            <Label HorizontalTextAlignment="Center"
+                   TextColor="Black" x:Name="orderNumber"/>
+            <Label HorizontalTextAlignment="Center"
+                   TextColor="Black" x:Name="cDate"/>
+            <Label HorizontalTextAlignment="Center"
+                   TextColor="Black" x:Name="dDate" />
+            <Label HorizontalTextAlignment="Center"
+                   TextColor="Black" x:Name="cost"/>
 
-        </StackLayout>
-            <Label HorizontalOptions="Center" TextColor="Teal" Text="Order Items" FontSize="18"/>
-            <ListView BackgroundColor="Gray" HasUnevenRows="true" x:Name="orderList"  >
+        </StackLayout  >
+            </Frame>
+            <Frame Margin="15" BackgroundColor="#b2ebf2">
+                <StackLayout>
+                     <Label Margin="15" BackgroundColor="#b2ebf2" FontAttributes="Bold"  TextColor="#424242" Text="Order Items" FontSize="22"/>
+            <ListView BackgroundColor="Transparent"  SeparatorColor="#f5f5f5" SeparatorVisibility="Default" HasUnevenRows="true" x:Name="orderList"  >
                 <ListView.ItemTemplate>
                   
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal">
-                                
+                            <StackLayout Margin="5" Orientation="Horizontal">
+                                <Label Text="Product:" TextColor="Black" VerticalOptions="Center" FontSize="10"/>
                                 <Label Text="{Binding model}"
                                        HorizontalOptions="Center"
-                                       VerticalOptions="Center" 
-                                       FontSize="12"/>
+                                       VerticalOptions="Center"
+                                       TextColor="#7b1fa2"
+                                       FontSize="10"/>
+                                <Label Text="Quantity :" TextColor="Black" VerticalOptions="Center" FontSize="10"/>
                                 <Label Text="{Binding quantity}"
+                                       TextColor="#7b1fa2"
                                        HorizontalOptions="Center"
                                        VerticalOptions="Center" 
-                                       FontSize="12"/>
+                                       FontSize="10"/>
+                                <Label Text="R :" TextColor="Blue" VerticalOptions="Center" FontSize="10"/>
                                 <Label Text="{Binding price}"
                                        HorizontalOptions="Center"
                                        VerticalOptions="Center" 
                                        TextColor="Blue"
-                                       FontSize="12"/>
+                                       FontSize="10"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Margin="10" BackgroundColor="Gray" Text="Checkout" Clicked="Handle_Clicked"/>
+                </StackLayout>
+            </Frame>
+           
+            <Button Margin="10" BackgroundColor="#e0f7fa"
+                    Text="Checkout" Clicked="Handle_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

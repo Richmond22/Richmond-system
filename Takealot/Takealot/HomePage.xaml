@@ -5,16 +5,19 @@
     <ContentPage.Content>
         <StackLayout>
             <Image Source="https://i2.wp.com/techmoran.com/wp-content/uploads/2014/07/takealot.jpg"
-                    HorizontalOptions="FillAndExpand"
+                    HorizontalOptions="CenterAndExpand"
                    HeightRequest="80"/>
+            <ActivityIndicator x:Name="waitforit" Color="Blue"   >
+                
+            </ActivityIndicator>
             <ListView SeparatorVisibility="None" HasUnevenRows="true" x:Name="prolist" ItemSelected="Handle_ItemSelected">
                 <ListView.ItemTemplate>
                   
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout>
-                                <Image HeightRequest="50"
-                                       WidthRequest="50"
+                                <Image HeightRequest="70"
+                                       WidthRequest="80"
                                        Source="{Binding ProductImage}"/>
                                 <Label HorizontalOptions="Center"
                                        VerticalOptions="Center" 
@@ -30,11 +33,7 @@
 
                     </DataTemplate>
                 </ListView.ItemTemplate>
-                
             </ListView>
-                
-            <ActivityIndicator Color="Red" x:Name="LoadInd"  IsRunning="true"  />
-                
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

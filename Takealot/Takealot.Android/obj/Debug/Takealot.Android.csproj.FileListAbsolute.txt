@@ -75,6 +75,16 @@
 /Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/R.txt
 /Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/uploadflags.txt
 /Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/res/drawable/baseline_keyboard_arrow_right_black_18dp.png
+/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/res/drawable/home.png
+/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/res/drawable/cart.png
+/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/res/drawable/account.png
+/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/res/drawable/order.png
+/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/res/drawable/register.png
+/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/res/drawable/log.png
+/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/res/drawable/add.png
+/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/res/drawable/subtr.png
+/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/res/drawable/delete.png
+/Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/res/drawable/logout1.png
 /Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/bin/Debug/Xamarin.Forms.Core.pdb
 /Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/linksrc/Takealot.Android.pdb
 /Users/reversidesoftwaresolutions/Documents/GitHub/Richmond-system/Takealot/Takealot.Android/obj/Debug/linksrc/Mono.Android.pdb

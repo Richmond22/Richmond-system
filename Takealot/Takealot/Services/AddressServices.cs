@@ -15,7 +15,7 @@ namespace Takealot.Services
 		public object GetAddress() 
         {
 
-			string url = "http://www.takealotapi.somee.com/api/Tbladdresse/" + TempStorage.CustomerID;
+			string url = "http://www.takealotsite.somee.com/api/Tbladdresse/" + TempStorage.CustomerID;
             var response = client.GetAsync(url).Result;
             
 
@@ -33,7 +33,7 @@ namespace Takealot.Services
 
 		public async Task<bool> PostAddress(AddressModel address)
         {
-			string url = "http://www.takealotapi.somee.com/api/Tbladdresse";
+			string url = "http://www.takealotsite.somee.com/api/Tbladdresse";
             var httpclient = new HttpClient();
             httpclient.DefaultRequestHeaders.ExpectContinue = false;
             var _json = JsonConvert.SerializeObject(address);
@@ -49,7 +49,7 @@ namespace Takealot.Services
 
 		public async Task<bool> PutAddress(AddressModel address)
         {
-			string url = "http://www.takealotapi.somee.com/api/Tbladdresse/";
+			string url = "http://www.takealotsite.somee.com/api/Tbladdresse/";
             client.DefaultRequestHeaders.ExpectContinue = false;
             var _json = JsonConvert.SerializeObject(address);
             HttpContent httpcontent = new StringContent(_json);

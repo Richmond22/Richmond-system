@@ -17,7 +17,7 @@ namespace Takealot
 			masterPageItem.Add(new MasterPageItem
 			{
 				Title = "Home",
-				IconSource = "",
+				IconSource = "home.png",
 				TargetType = typeof(HomePage)
 			});
 
@@ -25,36 +25,42 @@ namespace Takealot
 			masterPageItem.Add(new MasterPageItem
             {
                 Title = "Order",
-                IconSource = "",
+                IconSource = "order.png",
                 TargetType = typeof(Orders)
             });
 
 			masterPageItem.Add(new MasterPageItem
             {
                 Title = "Cart",
-                IconSource = "",
+                IconSource = "cart.png",
                 TargetType = typeof(Cart)
             });
 
 			masterPageItem.Add(new MasterPageItem
             {
                 Title = "My Account",
-                IconSource = "",
+                IconSource = "account.png",
                 TargetType = typeof(MyAccount)
             });
 
 			masterPageItem.Add(new MasterPageItem
             {
                 Title = "Login",
-                IconSource = "",
+                IconSource = "log.png",
                 TargetType = typeof(Login)
             });
 
 			masterPageItem.Add(new MasterPageItem
             {
                 Title = "Register",
-                IconSource = "",
+                IconSource = "register.png",
                 TargetType = typeof(Register)
+            });
+			masterPageItem.Add(new MasterPageItem
+            {
+                Title = "Logout",
+                IconSource = "logout1.png",
+                TargetType = typeof(HomePage)
             });
 
 			listView.ItemsSource = masterPageItem;

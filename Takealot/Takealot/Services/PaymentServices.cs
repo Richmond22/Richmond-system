@@ -15,7 +15,7 @@ namespace Takealot.Services
         public object GetPaymentMethod()
         {
 
-			string url = "http://www.takealotapi.somee.com/api/payment/" + TempStorage.CustomerID;
+			string url = "http://www.takealotsite.somee.com/api/payment/" + TempStorage.CustomerID;
             var response = client.GetAsync(url).Result;
 
 
@@ -33,7 +33,7 @@ namespace Takealot.Services
 
         public async Task<bool> PostMethod(PaymentModel pay)
         {
-			string url = "http://www.takealotapi.somee.com/api/payment";
+			string url = "http://www.takealotsite.somee.com/api/payment";
             var httpclient = new HttpClient();
             httpclient.DefaultRequestHeaders.ExpectContinue = false;
             var _json = JsonConvert.SerializeObject(pay);
@@ -49,7 +49,7 @@ namespace Takealot.Services
 
         public async Task<bool> PutPaymentMethod(PaymentModel pay)
         {
-			string url = "http://www.takealotapi.somee.com/api/payment/";
+			string url = "http://www.takealotsite.somee.com/api/payment/";
             client.DefaultRequestHeaders.ExpectContinue = false;
             var _json = JsonConvert.SerializeObject(pay);
             HttpContent httpcontent = new StringContent(_json);
@@ -65,7 +65,7 @@ namespace Takealot.Services
 		public object GetEFT()
         {
 
-			string url = "http://www.takealotapi.somee.com/api/eft/" + TempStorage.CustomerID;
+			string url = "http://www.takealotsite.somee.com/api/eft/" + TempStorage.CustomerID;
             var response = client.GetAsync(url).Result;
 
 
@@ -83,7 +83,7 @@ namespace Takealot.Services
 
         public async Task<bool> PostEFT(EFTModel eFT)
         {
-			string url = "http://www.takealotapi.somee.com/api/eft";
+			string url = "http://www.takealotsite.somee.com/api/eft";
             var httpclient = new HttpClient();
             httpclient.DefaultRequestHeaders.ExpectContinue = false;
             var _json = JsonConvert.SerializeObject(eFT);
@@ -99,7 +99,7 @@ namespace Takealot.Services
         
         public async Task<bool> PutEFT(EFTModel eFT)
         {
-			string url = "http://www.takealotapi.somee.com/api/eft/";
+			string url = "http://www.takealotsite.somee.com/api/eft/";
             client.DefaultRequestHeaders.ExpectContinue = false;
             var _json = JsonConvert.SerializeObject(eFT);
             HttpContent httpcontent = new StringContent(_json);
@@ -115,7 +115,7 @@ namespace Takealot.Services
 		public object GetCredit()
         {
 
-			string url = "http://www.takealotapi.somee.com/api/Tblcredit/" + TempStorage.CustomerID;
+			string url = "http://www.takealotsite.somee.com/api/Tblcredit/" + TempStorage.CustomerID;
             var response = client.GetAsync(url).Result;
 
 
@@ -133,7 +133,7 @@ namespace Takealot.Services
 
         public async Task<bool> PostCredit(CREDITModel credit)
         {
-			string url = "http://www.takealotapi.somee.com/api/Tblcredit";
+			string url = "http://www.takealotsite.somee.com/api/Tblcredit";
             var httpclient = new HttpClient();
             httpclient.DefaultRequestHeaders.ExpectContinue = false;
             var _json = JsonConvert.SerializeObject(credit);
@@ -149,7 +149,7 @@ namespace Takealot.Services
 
         public async Task<bool> PutCredit(CREDITModel credit)
         {
-			string url = "http://www.takealotapi.somee.com/api/Tblcredit/";
+			string url = "http://www.takealotsite.somee.com/api/Tblcredit/";
             client.DefaultRequestHeaders.ExpectContinue = false;
             var _json = JsonConvert.SerializeObject(credit);
             HttpContent httpcontent = new StringContent(_json);

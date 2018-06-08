@@ -43,6 +43,7 @@ namespace Takealot.Views
 				};
 				var res = orderService.PostOrderItem(items);
 				var ree = productServices.DeleteCartAsync(cart.cartID.ToString());
+				Application.Current.MainPage = new MainPage();
 			}
 		}
 	}

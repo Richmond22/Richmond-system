@@ -14,7 +14,7 @@ namespace Takealot.Services
 			
         }
         
-		string url = "http://www.takealotapi.somee.com/api/Tblcustomer";
+		string url = "http://www.takealotsite.somee.com/api/Tblcustomer";
 
 		public HttpClient httpclient = new HttpClient();
 

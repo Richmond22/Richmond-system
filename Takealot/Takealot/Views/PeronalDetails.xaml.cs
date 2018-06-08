@@ -15,18 +15,30 @@ namespace Takealot.Views
         public  PeronalDetails()
         {
             InitializeComponent();
-			details = (UserModel)loginServices.getCustomerClaims();
 
-			name.Text = details.firstname;
-			Sur.Text = details.lastname;
-			mail.Text = details.email;
-			mobile.Text = details.phone;
+
 
         }
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+            if(TempStorage.logged)
+			{
+				details = (UserModel)loginServices.getCustomerClaims();
+
+                name.Text = details.firstname;
+                Sur.Text = details.lastname;
+                mail.Text = details.email;
+                mobile.Text = details.phone;
+			}else
+			{
+				Navigation.PushAsync(new Login());
+			}
+		}
 
 
-		 
-async void Handle_Clicked(object sender, System.EventArgs e)
+
+		async void Handle_Clicked(object sender, System.EventArgs e)
 		{
 			UserModel user = new UserModel
 			{

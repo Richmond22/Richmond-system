@@ -19,37 +19,42 @@ namespace Takealot.Views
         public Cart()
         {
             InitializeComponent();
-            if(!TempStorage.logged)
-			{
-				
-				Navigation.PushAsync(new Login());
-			}
+            
 
         }
-		protected override void OnAppearing()
+		protected async override void OnAppearing()
 		{
 			base.OnAppearing();
-			List<CartView> CartList = productServices.getCart();
-            List<CartView> viewwC = new List<CartView>();
-            foreach (CartView cr in CartList.ToList())
+			if (TempStorage.logged == false)
             {
-				TotalQ += cr.quantity;
-				TotalP += (cr.quantity * cr.price);
-				viewwC.Add(new CartView
+
+               await Navigation.PushAsync(new Login());
+            }
+			else
+			{
+				List<CartView> CartList = productServices.getCart();
+                List<CartView> viewwC = new List<CartView>();
+                foreach (CartView cr in CartList.ToList())
                 {
-                    cartID = cr.cartID,
-                    productID = cr.productID,
-                    quantity = cr.quantity,
-                    picture = BytesToImage(cr.imgName),
-                    model = cr.model,
-                    customerID = cr.customerID,
-                    price = cr.price
-                });
+                    TotalQ += cr.quantity;
+                    TotalP += (cr.quantity * cr.price);
+                    viewwC.Add(new CartView
+                    {
+                        cartID = cr.cartID,
+                        productID = cr.productID,
+                        quantity = cr.quantity,
+                        picture = BytesToImage(cr.imgName),
+                        model = cr.model,
+                        customerID = cr.customerID,
+                        price = cr.price
+                    });
+                }
+                TP.Text = " R" + TotalP.ToString();
+                TQ.Text = "Total ( " + TotalQ.ToString() + ") items) :";
+                TempStorage.TotalP = TotalP.ToString();
+                cartList.ItemsSource = viewwC;
 			}
-			TP.Text = "Total Price : R" + TotalP.ToString();
-			TQ.Text = "Total Items : " + TotalQ.ToString();
-			TempStorage.TotalP = TotalP.ToString();
-            cartList.ItemsSource = viewwC;
+
 
 		}
 
@@ -119,6 +124,9 @@ namespace Takealot.Views
 			if(TotalQ > 0)
 			{
 				Navigation.PushAsync(new Shipping());
+			}else
+			{
+				DisplayAlert("Empty", "Your shopping cart is empty, Please add products", "Ok");
 			}
 
 		}

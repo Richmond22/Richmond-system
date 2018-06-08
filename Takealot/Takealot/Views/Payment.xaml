@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="Takealot.Views.Payment">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="Silver">
             <Image Source="http://www.africabespoke.com/wp-content/uploads/2013/12/pay-now1.jpg"/>
         
             <Button Text="EFT" 
+                    BackgroundColor="Gray"
                     Clicked="EftMethod"/>
             <Button Text="CREDIT"
+                    BackgroundColor="Gray"
                     Clicked="CreditMethod"
                     />
         </StackLayout>

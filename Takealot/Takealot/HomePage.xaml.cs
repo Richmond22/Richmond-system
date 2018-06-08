@@ -18,7 +18,7 @@ namespace Takealot
 		public ProductView productView = new ProductView();
 		public List<ProductView> productViews = new List<ProductView>();
 		public Boolean loading = true;
-
+		public List<Products> productList = new List<Products>();
 		public HomePage()
 		{
 			InitializeComponent();
@@ -28,8 +28,16 @@ namespace Takealot
 		protected async override void OnAppearing()
 		{
 			base.OnAppearing();
+			waitforit.IsRunning = true;
+			waitforit.IsVisible = true;
+			productList = await productServices.getProducts();
+			waitforit.IsRunning = false;
+            waitforit.IsVisible = false;
+			    
+                
+				
+			    
 
-			List<Products> productList = await productServices.getProducts();
 
 
             Products products = new Products();
@@ -57,12 +65,14 @@ namespace Takealot
 		async void  Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
 		{
 			ProductView selectedProduct =  (ProductView)e.SelectedItem;
-			CartModel cart = new CartModel { customerID = Convert.ToInt32(TempStorage.CustomerID), productID = selectedProduct.productID, quantity = 1 };
+
 		  var respone = await DisplayAlert("Cart","Add selected product to cart ?", "ADD", "Cancel");
             if(TempStorage.logged)
 			{
+				
 				if (respone)
                 {
+					CartModel cart = new CartModel { customerID = Convert.ToInt32(TempStorage.CustomerID), productID = selectedProduct.productID, quantity = 1 };
                     var message = await productServices.PostCart(cart);
                     if (message)
                         await DisplayAlert("added", "Product successfully added to cart", "ok");

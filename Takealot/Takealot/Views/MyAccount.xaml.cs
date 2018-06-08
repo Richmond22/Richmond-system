@@ -50,16 +50,6 @@ namespace Takealot.Views
             }
 		}
 
-		async void Handle_Clicked_3(object sender, System.EventArgs e)
-		{
-			if (TempStorage.logged)
-            {
-                await Navigation.PushAsync(new Invoices());
-            }
-            else
-            {
-                await Navigation.PushAsync(new Login());
-            }
-		}
+
     }
 }

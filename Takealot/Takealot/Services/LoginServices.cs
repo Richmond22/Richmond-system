@@ -22,7 +22,7 @@ namespace Takealot.Services
         {
 			
 
-			string url = "http://www.takealotapi.somee.com/token";
+			string url = "http://www.takealotsite.somee.com/token";
 
             var accept = "application/json";
             client.DefaultRequestHeaders.Add("Accept", accept);
@@ -49,7 +49,7 @@ namespace Takealot.Services
         public object getCustomerClaims() //get customer profile
         {
 
-			string url = "http://www.takealotapi.somee.com/api/GetCust?email="+TempStorage.Username;
+			string url = "http://www.takealotserver.somee.com/api/GetCust?email="+TempStorage.Username;
 
             //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "Bearer " + TempStorage.Token);
             var response =  client.GetAsync(url).Result;

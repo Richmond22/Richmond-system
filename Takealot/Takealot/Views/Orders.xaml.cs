@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Takealot.Helpers;
 using Takealot.Model;
 using Takealot.Services;
 using Xamarin.Forms;
@@ -16,8 +17,17 @@ namespace Takealot.Views
 		protected override async void OnAppearing()
 		{
 			base.OnAppearing();
-			List<OrderModel> ordeerlist = await orderService.getOrders();
-			orderList.ItemsSource = ordeerlist;
+			if (TempStorage.logged)
+			{
+				List<OrderModel> ordeerlist = await orderService.getOrders();
+
+				orderList.ItemsSource = ordeerlist;
+			}
+			else
+			{
+				await Navigation.PushAsync(new Login());
+			}
+
             
 		}
 	}

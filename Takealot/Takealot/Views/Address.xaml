@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Takealot.Views.Address">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Takealot.Views.Address"
+             Title="Address">
     <ContentPage.Content>
         <StackLayout>
             <Entry x:Name="ADID" IsVisible="false" />
@@ -34,9 +37,11 @@
            
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Button Text="Save"
-                        Clicked="Save"/>
-                <Button Text="Cancel"/>
+                <Button Text="Accept"
+                        HorizontalOptions="FillAndExpand"
+                        Clicked="Save"
+                        BackgroundColor="Gray"/>
+                
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
